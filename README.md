@@ -2,6 +2,7 @@
 
 ## TODO
 
-* terminal
-* ohmyzsh
+* create install script
+* terminal (kitty?)
+* ohmyzsh (aliases)
 * neovim

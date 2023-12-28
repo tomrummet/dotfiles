@@ -1,1 +1,7 @@
-# dotfiles
+# Dotfiles
+
+## TODO
+
+* terminal
+* ohmyzsh
+* neovim

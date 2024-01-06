@@ -2,7 +2,7 @@
 
 ## TODO
 
-* create install script
-* terminal (kitty?)
-* ohmyzsh (aliases)
-* neovim
+- [x] create install script
+- [ ] terminal (cross platform)
+- [x] ohmyzsh
+- [ ] neovim

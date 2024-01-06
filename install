@@ -2,5 +2,9 @@
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
-#Zsh
+# Zsh
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
+
+# Alacritty
+mkdir -p $HOME/.config/alacritty
+ln -sf $DOTFILES/alacritty/alacritty.toml $HOME/.config/alacritty/alacritty.toml

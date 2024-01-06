@@ -1,0 +1,5 @@
+working_directory = "~/code/"
+
+[window]
+decorations = "None"
+opacity = "0.5"

@@ -18,15 +18,6 @@ path=(
 )
 
 
-if uname -r | grep -q "WSL" ; then
-	cd /var/www/
-fi
-
-
-if uname -r | grep -q "rpi" ; then
-	cd /home/far/Code/
-fi
-
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 

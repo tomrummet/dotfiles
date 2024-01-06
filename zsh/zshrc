@@ -31,3 +31,4 @@ alias dcup="docker-compose"
 # Laravel
 alias a='artisan'
 
+cd $HOME/code/

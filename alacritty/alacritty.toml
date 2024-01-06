@@ -1,5 +1,3 @@
-working_directory = "~/code/"
-
 [window]
-decorations = "None"
+decorations = "Full"
 opacity = "0.5"

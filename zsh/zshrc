@@ -31,4 +31,10 @@ alias dcup="docker-compose"
 # Laravel
 alias a='artisan'
 
+# Working directory
 cd $HOME/code/
+
+# Tmux (start/restart)
+tmux
+tmux kill-session -a
+clear

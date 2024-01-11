@@ -1,8 +1,16 @@
 # Dotfiles
 
+- alacritty terminal
+- tmux
+- neovim
+- fzf
+- ohmyzsh
+
 ## TODO
 
 - [x] create install script
-- [ ] terminal (cross platform)
-- [x] ohmyzsh
+- [x] terminal (alacritty)
+- [x] tmux
+- [ ] ohmyzsh
+	- [ ] machine specific scripts
 - [ ] neovim

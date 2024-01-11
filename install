@@ -4,9 +4,19 @@ DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 # Zsh
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
-ln -sf $DOTFILES/zsh/zshev $HOME/.zshenv
+ln -sf $DOTFILES/zsh/zshenv $HOME/.zshenv
 
-# Alacritty
-mkdir -p $HOME/.config/alacritty
-#ln -sf $DOTFILES/alacritty/alacritty.toml $HOME/.config/alacritty/alacritty.toml
+# Alacritty (switch to .toml when updated to v0.13.X)
 ln -sf $DOTFILES/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+
+# Tmux
+ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+
+# Neovim
+rm -rf $HOME/.config/nvim
+ln -sf $DOTFILES/nvim $HOME/.config/nvim
+
+# Script
+mkdir -p $HOME/.local/bin
+
+ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t

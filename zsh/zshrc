@@ -5,16 +5,16 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 
 plugins=(
-	git
+    git
 )
 
 source $ZSH/oh-my-zsh.sh
 
 path=(
-	$HOME/.local/bin
-	$HOME/.config/composer/vendor/bin
-	./vendor/bin
-	$path
+    $HOME/.local/bin
+    $HOME/.config/composer/vendor/bin
+    ./vendor/bin
+    $path
 )
 
 
@@ -30,5 +30,4 @@ alias dcup="docker-compose"
 
 # Laravel
 alias a='artisan'
-
 

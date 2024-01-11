@@ -4,7 +4,14 @@ DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
 # Zsh
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
-ln -sf $DOTFILES/zsh/zshenv $HOME/.zshenv
+
+if uname -r | grep -q "WSL2" ; then
+    ln -sf $DOTFILES/zsh/zshenv_private $HOME/.zshenv
+fi
+
+if uname -r | grep -q "pop" ; then
+    ln -sf $DOTFILES/zsh/zshenv_work $HOME/.zshenv
+fi
 
 # Alacritty (switch to .toml when updated to v0.13.X)
 ln -sf $DOTFILES/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml

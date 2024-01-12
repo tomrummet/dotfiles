@@ -5,10 +5,12 @@ DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 # Zsh
 #ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 
+# Ash
 if uname -r | grep -q "WSL2" ; then
     ln -sf $DOTFILES/zsh/env/private $HOME/.zshenv
 fi
 
+# ash-h28zfb3
 case $DESKTOP_SESSION in
 	"pop" )
 		ln -sf $DOTFILES/zsh/env/work $HOME/.zshenv ;;

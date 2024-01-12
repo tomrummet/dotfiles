@@ -1,21 +1,18 @@
 #!/usr/bin/env bash
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
+MACHINA=$(uname -n)
 
-# Zsh
-#ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
-
-# Ash
-if uname -r | grep -q "WSL2" ; then
-    ln -sf $DOTFILES/zsh/env/private $HOME/.zshenv
+if [[ $MACHINA == "Ash" ]] ; then
+    ln -sf $DOTFILES/zsh/aliases/home $HOME/.aliases
+    ln -sf $DOTFILES/zsh/env/home $HOME/.zshenv
+elif [[ $MACHINA == "Ash-h28zfb3" ]] ; then
+    ln -sf $DOTFILES/zsh/aliases/work $HOME/.aliases
+    ln -sf $DOTFILES/zsh/env/work $HOME/.zshenv
 fi
 
-# ash-h28zfb3
-case $DESKTOP_SESSION in
-	"pop" )
-		ln -sf $DOTFILES/zsh/env/work $HOME/.zshenv ;;
-esac
-
+# Zsh
+ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 
 # Alacritty (switch to .toml when updated to v0.13.X)
 ln -sf $DOTFILES/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml

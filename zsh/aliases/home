@@ -1,0 +1,5 @@
+# Aliases intended for home use
+
+# Laravel
+alias a='artisan'
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'

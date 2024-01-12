@@ -17,20 +17,14 @@ path=(
     $path
 )
 
-
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 
 # Aliases
 alias vim=nvim
-alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 # Docker
-alias dcup="docker-compose"
+alias dcup="docker-compose up -d"
+alias dcstop="docker-compose stop"
 
-# Laravel
-alias a='artisan'
-
-if [[ "$DESKTOP_SESSION" -eq "pop" ]] ; then
-	echo 'hej'
-fi
+source $HOME/.aliases

@@ -3,7 +3,7 @@
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 MACHINA=$(uname -n)
 
-if [[ $MACHINA == "Ash" ]] ; then
+if [[ $MACHINA == "Ash" ]] || [[ $MACHINA == "pie" ]] ; then
     ln -sf $DOTFILES/zsh/aliases/home $HOME/.aliases
     ln -sf $DOTFILES/zsh/env/home $HOME/.zshenv
 elif [[ $MACHINA == "Ash-h28zfb3" ]] ; then

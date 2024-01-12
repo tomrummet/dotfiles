@@ -31,3 +31,6 @@ alias dcup="docker-compose"
 # Laravel
 alias a='artisan'
 
+if [[ "$DESKTOP_SESSION" -eq "pop" ]] ; then
+	echo 'hej'
+fi

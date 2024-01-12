@@ -2,24 +2,15 @@
 
 This repository is tested on Linux (PopOS + Raspberry Pi OS) and on Windows 11 (WSL2).
 
-## TODO
-
-- [x] create install script
-- [x] terminal (alacritty)
-- [x] tmux
-- [ ] ohmyzsh
-    - [ ] machine specific scripts
-- [ ] neovim
-
 ## Prerequisites
 
 The following software needs to be installed:
 
-- Alacritty
-- OhMyZsh
-- Tmux
-- FZF
-- Neovim
+- Alacritty <https://alacritty.org/>
+- Neovim <https://neovim.io/>
+- OhMyZsh <https://ohmyz.sh/>
+- Tmux <https://github.com/tmux/tmux>
+- FZF <https://github.com/junegunn/fzf>
 
 Scripts assume local code folder is located in ~/code/.
 
@@ -42,3 +33,14 @@ Usage of this dotfiles repository requires WSL2.
 #### Alacritty
 
 Copy the file dotfiles/alacritty/alacritty-win11.toml to %AppData%\Roaming\alacritty\alacritty.toml.
+
+## TODO
+
+Configuration for:
+
+- [x] create install script
+- [x] terminal (alacritty)
+- [x] tmux
+- [ ] ohmyzsh
+    - [x] machine specific scripts
+- [ ] neovim

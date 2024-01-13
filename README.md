@@ -14,11 +14,11 @@ The following software needs to be installed:
 - Tmux <https://github.com/tmux/tmux>
 - FZF <https://github.com/junegunn/fzf>
 
-Scripts assume local code folder is located in ~/code/.
+Scripts assume local code folder is located in `~/code/`.
 
-It also assumes that the dotfiles folder is in ~/code/tools/.
+It also assumes that the dotfiles folder is in `~/code/tools/`.
 
-To include .zshenv and .aliases ENV variable $MACHINA needs to be set (hell/work).
+To include `.zshenv` and `.aliases` ENV variable `$MACHINA` needs to be set (hell/work).
 
 ## Usage
 
@@ -36,7 +36,7 @@ Usage of this dotfiles repository requires WSL2.
 
 #### Alacritty
 
-Copy the file dotfiles/alacritty/alacritty-win11.toml to %AppData%\Roaming\alacritty\alacritty.toml.
+Copy the file `dotfiles/alacritty/alacritty-win11.toml` to `%AppData%\Roaming\alacritty\alacritty.toml`.
 
 ## TODO
 

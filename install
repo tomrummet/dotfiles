@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
-MACHINA=$(uname -n)
 
-if [[ $MACHINA == "Ash" ]] || [[ $MACHINA == "pie" ]] ; then
+if [[ $MACHINA == "hell" ]] ; then
     ln -sf $DOTFILES/zsh/aliases/home $HOME/.aliases
     ln -sf $DOTFILES/zsh/env/home $HOME/.zshenv
-elif [[ $MACHINA == "Ash-h28zfb3" ]] ; then
+elif [[ $MACHINA == "work" ]] ; then
     ln -sf $DOTFILES/zsh/aliases/work $HOME/.aliases
     ln -sf $DOTFILES/zsh/env/work $HOME/.zshenv
 fi

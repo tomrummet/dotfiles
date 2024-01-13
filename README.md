@@ -2,6 +2,8 @@
 
 This repository is tested on Linux (PopOS + Raspberry Pi OS) and on Windows 11 (WSL2).
 
+Heavily inspired from the Laracast  from Jess Archers <https://github.com/jessarcher/dotfiles>
+
 ## Prerequisites
 
 The following software needs to be installed:
@@ -15,6 +17,8 @@ The following software needs to be installed:
 Scripts assume local code folder is located in ~/code/.
 
 It also assumes that the dotfiles folder is in ~/code/tools/.
+
+To include .zshenv and .aliases ENV variable $MACHINA needs to be set (hell/work).
 
 ## Usage
 

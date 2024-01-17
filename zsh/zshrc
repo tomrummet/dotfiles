@@ -1,5 +1,9 @@
 # Personal zsh config of Ash (ash@a-sh.dk)
 
+if [ "$TMUX" = "" ]; then
+    tmux new -s "go!" -c $HOME/code/;
+fi
+
 export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"

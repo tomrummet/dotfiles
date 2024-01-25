@@ -5,6 +5,6 @@ alias dcd='docker-compose down'
 alias dcr='docker-compose restart'
 alias dcbash='docker-compose exec -u www-data php bash'
 
-alias log-tail='tail -f {metazo/sites/*,var/log/php}.log'
-alias log-trun='truncate -s 0 var/log/php.log && truncate -s 0 metazo/sites/*.log'
+alias lta='tail -f {metazo/sites/*,var/log/php}.log'
+alias ltr='truncate -s 0 var/log/php.log && truncate -s 0 metazo/sites/*.log'
 

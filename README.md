@@ -15,10 +15,13 @@ The following software needs to be installed:
 - OhMyZsh <https://ohmyz.sh/>
 - Tmux <https://github.com/tmux/tmux>
 - FZF <https://github.com/junegunn/fzf>
+- ripgrep (rg) <https://github.com/BurntSushi/ripgrep>
 
-Scripts assume local code folder is located in `~/code/`.
+### Assumptions
 
-It also assumes that the dotfiles folder is in `~/code/tools/`.
+- local code folder is located in `~/code/`
+- dotfiles folder is in `~/code/tools/`
+- it uses JetBrainsMono font from Nerd Fonts <https://www.nerdfonts.com/>
 
 To include `.zshenv` and `.aliases` ENV variable `$MACHINA` needs to be set (hell/work).
 
@@ -47,6 +50,6 @@ Configuration for:
 - [x] create install script
 - [x] terminal (alacritty)
 - [x] tmux
-- [ ] ohmyzsh
-    - [x] machine specific scripts
+- [x] ohmyzsh
+    - [x] machine specific aliases and environment variables
 - [ ] neovim

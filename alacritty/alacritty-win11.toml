@@ -5,3 +5,6 @@ decorations = "None"
 opacity = 0.9
 
 startup_mode = "Maximized"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }

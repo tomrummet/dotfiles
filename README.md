@@ -53,3 +53,4 @@ Configuration for:
 - [x] ohmyzsh
     - [x] machine specific aliases and environment variables
 - [ ] neovim
+- [ ] create install prerequisites script

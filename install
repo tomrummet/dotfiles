@@ -2,10 +2,15 @@
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
-if [[ $MACHINA == "hell" ]] ; then
+echo "Is this hell?"
+echo -n "y/n: "
+
+read -r hell
+
+if [ $hell = "y" ]; then
     ln -sf $DOTFILES/zsh/aliases/home $HOME/.aliases
     ln -sf $DOTFILES/zsh/env/home $HOME/.zshenv
-elif [[ $MACHINA == "work" ]] ; then
+else
     ln -sf $DOTFILES/zsh/aliases/work $HOME/.aliases
     ln -sf $DOTFILES/zsh/env/work $HOME/.zshenv
 fi
@@ -14,6 +19,7 @@ fi
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 
 # Alacritty (switch to .toml when updated to v0.13.X)
+mkdir -p $HOME/.config/alacritty
 ln -sf $DOTFILES/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
 # Tmux

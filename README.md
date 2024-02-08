@@ -17,13 +17,13 @@ The following software needs to be installed:
 - FZF <https://github.com/junegunn/fzf>
 - ripgrep (rg) <https://github.com/BurntSushi/ripgrep>
 
+All this can be install by running `./setup`.
+
 ### Assumptions
 
 - local code folder is located in `~/code/`
 - dotfiles folder is in `~/code/tools/`
 - it uses JetBrainsMono font from Nerd Fonts <https://www.nerdfonts.com/>
-
-To include `.zshenv` and `.aliases` ENV variable `$MACHINA` needs to be set (hell/work).
 
 ## Usage
 
@@ -34,6 +34,8 @@ cd ~/code/
 git clone git@github.com:ash-lund/dotfiles.git
 ./install
 ```
+
+**Optional**: If you want to install prerequisites, then run `./setup`.
 
 ### Windows
 
@@ -53,4 +55,4 @@ Configuration for:
 - [x] ohmyzsh
     - [x] machine specific aliases and environment variables
 - [ ] neovim
-- [ ] create install prerequisites script
+- [x] create install prerequisites script

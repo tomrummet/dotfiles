@@ -1,0 +1,63 @@
+#!/usr/bin/env sh
+
+# Install required software
+sudo apt install -y \
+    zsh \
+    vim \
+    alacritty \
+    tmux \
+    fzf \
+    ripgrep \
+    curl \
+    wget \
+    unzip \
+    ninja-build \
+    gettext \
+    cmake \
+    xclip
+
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "Setting up zsh and OhMyZsh..."
+
+    # Switch from bash to zsh
+    chsh -s $(which zsh)
+
+    # Install and setup OhMyZsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+if [ ! -d "$HOME/code/setup-tmp" ]; then
+    echo "Creating setup-tmp folder..."
+    mkdir -p ~/code/setup-tmp
+fi
+
+# Install neovim
+if [ $(dpkg-query -W -f='${Status}' neovim 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
+    echo "Installing Neovim..."
+    cd ~/code/setup-tmp/
+
+    git clone https://github.com/neovim/neovim
+    cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo
+    cd build && sudo cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+fi
+
+if [ ! -d "$HOME/.fonts" ]; then
+    echo "Creating .fonts folder..."
+    mkdir -p ~/.fonts
+fi
+
+if [ ! -f "$HOME/.fonts/JetBrainsMonoNLNerdFont-Thin.ttf" ]; then
+    # Setup fonts (from NerdFonts.com)
+    echo "Downloading JetBrainsMono font from nerdfonts.com..."
+
+    cd ~/.fonts/
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
+    unzip JetBrainsMono.zip
+    rm \
+         JetBrainsMono.zip \
+	 OFL.txt \
+	 README.md
+fi
+
+echo "Removing setup-tmp folder..."
+rm -rf "$HOME/code/setup-tmp"

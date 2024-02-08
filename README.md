@@ -35,7 +35,7 @@ git clone git@github.com:ash-lund/dotfiles.git
 ./install
 ```
 
-**Optional**: If you want to install prerequisites, then run `./setup`.
+**Optional**: If you want to install prerequisites, then run `./setup` before `./install`.
 
 ### Windows
 

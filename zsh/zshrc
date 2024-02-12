@@ -26,6 +26,7 @@ export GIT_EDITOR=nvim
 
 # Aliases
 alias vim=nvim
+alias pkey="xclip -selection clipboard ~/.ssh/id_rsa.pub"
 
 # Docker
 alias dcup="docker-compose up -d"

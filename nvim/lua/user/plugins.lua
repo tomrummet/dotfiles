@@ -50,6 +50,12 @@ require("lazy").setup({
 
     -- File tree sidebar
     { import = 'user.plugins.neo-tree' },
+
+    -- Display buffer as tabs
+    { import = 'user.plugins.bufferline' },
+
+    --
+    { import = 'user.plugins.indent-blankline' },
 }, {
   checker = {
     enabled = true,

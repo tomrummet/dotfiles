@@ -14,7 +14,8 @@ sudo apt install -y \
     ninja-build \
     gettext \
     cmake \
-    xclip
+    xclip \
+    build-essential
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "Setting up zsh and OhMyZsh..."

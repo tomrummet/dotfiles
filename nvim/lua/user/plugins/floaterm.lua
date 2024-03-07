@@ -1,5 +1,6 @@
 return {
     'voldikss/vim-floaterm',
+    lazy = false,
     keys = {
         { '<F1>', ':FloatermToggle<CR>' },
         { '<F1>', '<C-\\><C-n>:FloatermToggle<CR>', mode = 't' },

@@ -1,5 +1,6 @@
 return {
   'nvim-telescope/telescope.nvim',
+  lazy = false,
   dependencies = {
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons',
@@ -7,7 +8,6 @@ return {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   },
   keys = {
-
     { '<leader>f', function() require('telescope.builtin').find_files() end },
     { '<leader>F', function() require('telescope.builtin').find_files({ no_ignore = true, prompt_title = 'All Files' }) end },
     { '<leader>b', function() require('telescope.builtin').buffers() end },

@@ -9,3 +9,4 @@ alias lta='tail -f {metazo/sites/*,var/log/php}.log'
 alias ltr='truncate -s 0 var/log/php.log && truncate -s 0 metazo/sites/*.log'
 alias lt='ltr && lta'
 
+alias pstorm='phpstorm . > /dev/null 2>&1 &'

@@ -13,34 +13,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {},
-        config = function()
-            vim.cmd[[colorscheme tokyonight-moon]]
-        end,
-    },
+    -- Theme config
+    { import = 'user.plugins.theme' },
 
     "tpope/vim-commentary", -- Commenting support -- Commenting support
 
     -- Autopairing quotes, brackets...
-    {
-        'windwp/nvim-autopairs',
-        config = function()
-            require('nvim-autopairs').setup()
-        end,
-    },
+    { import = 'user.plugins.autopairs' },
 
-    {
-        'AndrewRadev/splitjoin.vim',
-        config = function()
-            vim.g.splitjoin_html_attributes_bracket_on_new_line = 1
-            vim.g.splitjoin_trailing_comma = 1
-            vim.g.splitjoin_php_method_chain_full = 1
-        end,
-    },
+    -- Splitjoin
+    { import = 'user.plugins.splitjoin' },
 
     -- Status line
     { import = 'user.plugins.lualine' },
@@ -56,6 +38,12 @@ require("lazy").setup({
 
     --
     { import = 'user.plugins.indent-blankline' },
+
+    -- Git integration
+    { import = 'user.plugins.gitsigns' },
+
+    -- FloatTerm
+    { import = 'user.plugins.floatterm' },
 }, {
   checker = {
     enabled = true,

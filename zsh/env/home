@@ -1,4 +1,2 @@
 # ENV intended for home use
 
-
-if [ -e /home/allan/.nix-profile/etc/profile.d/nix.sh ]; then . /home/allan/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

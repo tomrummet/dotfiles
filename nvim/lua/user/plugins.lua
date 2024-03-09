@@ -47,16 +47,6 @@ require("lazy").setup({
 
     -- Treesitter
     { import = 'user.plugins.treesitter' },
-
-    -- "williamboman/mason.nvim",
-    -- "williamboman/mason-lspconfig.nvim",
-    -- "neovim/nvim-lspconfig",
-
-    -- { import = 'user.plugins.cmp' },
-
-    -- -- LSP
-    -- { import = 'user.plugins.lspconfig' },
-
 }, {
   checker = {
     enabled = true,

@@ -7,6 +7,7 @@ if [[ $# -eq 1 ]]; then
 else
     items=`find ~/code -maxdepth 1 -mindepth 1 -type d`
     items+=`echo -e "\n$HOME/code/tools/dotfiles"`
+
     selected=`echo "$items" | fzf`
 fi
 
@@ -14,11 +15,11 @@ if [[ $selected == '' ]]; then
     exit
 fi
 
-dirname=`basename $selected | sed 's/\./_/g'`
+dirname=`basename "$selected" | sed 's/\./_/g'`
 
-tmux switch-client -t =$dirname
+tmux switch-client -t ="$dirname"
 if [[ $? -eq 0 ]]; then
     exit 0
 fi
 
-tmux new-session -c $selected -d -s $dirname && tmux switch-client -t $dirname || tmux new -c $selected -A -s $dirname
+tmux new-session -c "$selected" -d -s "$dirname" && tmux switch-client -t "$dirname" || tmux new -c "$selected" -A -s "$dirname"

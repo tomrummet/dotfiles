@@ -1,4 +1,4 @@
-# Personal zsh config of Ash (ash@a-sh.dk)
+# Personal zsh config of Ash (ash@helash.dev)
 
 if [ "$TMUX" = "" ]; then
     tmux new -s "go!" -c $HOME/code/;

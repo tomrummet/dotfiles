@@ -1,7 +1,5 @@
 # Aliases intended for work use
 
-alias dcup='docker-compose up -d'
-alias dcd='docker-compose down'
 alias dcr='docker-compose restart'
 alias dcbash='docker-compose exec -u www-data php bash'
 

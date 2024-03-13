@@ -12,7 +12,6 @@ return {
     -- Setup Mason to automatically install LSP servers
     require('mason').setup({
       ui = {
-
         height = 0.8,
       },
     })
@@ -25,20 +24,14 @@ return {
     require('lspconfig').intelephense.setup({
       commands = {
         IntelephenseIndex = {
-
           function()
             vim.lsp.buf.execute_command({ command = 'intelephense.index.workspace' })
           end,
-
         },
       },
       on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
-
-        -- if client.server_capabilities.inlayHintProvider then
-        --   vim.lsp.buf.inlay_hint(bufnr, true)
-        -- end
       end,
       capabilities = capabilities
     })
@@ -88,10 +81,6 @@ return {
 
     })
 
-    -- Tailwind CSS
-    require('lspconfig').tailwindcss.setup({ capabilities = capabilities })
-
-
     -- JSON
     require('lspconfig').jsonls.setup({
       capabilities = capabilities,
@@ -113,7 +102,6 @@ return {
             return utils.root_has_file({ '.eslintrc.js' })
           end,
         }),
-        -- null_ls.builtins.diagnostics.phpstan, -- TODO: Only if config file
         null_ls.builtins.diagnostics.trail_space.with({ disabled_filetypes = { 'NvimTree' } }),
 
         null_ls.builtins.formatting.eslint_d.with({
@@ -122,7 +110,6 @@ return {
           end,
         }),
         null_ls.builtins.formatting.pint.with({
-
           condition = function(utils)
             return utils.root_has_file({ 'vendor/bin/pint' })
           end,
@@ -130,7 +117,7 @@ return {
         null_ls.builtins.formatting.prettier.with({
           condition = function(utils)
 
-            return utils.root_has_file({ '.prettierrc', '.prettierrc.json', '.prettierrc.yml', '.prettierrc.js', 'prettier.config.js' })
+          return utils.root_has_file({ '.prettierrc', '.prettierrc.json', '.prettierrc.yml', '.prettierrc.js', 'prettier.config.js' })
           end,
         }),
       },
@@ -147,10 +134,8 @@ return {
             end,
           })
         end
-
       end,
     })
-
 
     require('mason-null-ls').setup({ automatic_installation = true })
 

@@ -47,6 +47,12 @@ require("lazy").setup({
 
     -- Treesitter
     { import = 'user.plugins.treesitter' },
+
+    -- Language Server Protocol.
+    { import = 'user.plugins.lspconfig' },
+
+    -- Completion
+    { import = 'user.plugins.cmp' },
 }, {
   checker = {
     enabled = true,

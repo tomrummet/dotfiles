@@ -33,3 +33,7 @@ ln -sf $DOTFILES/nvim $HOME/.config/nvim
 mkdir -p $HOME/.local/bin
 
 ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t
+
+# NVM (Node Version Manager)
+mkdir -p $HOME/.nvm
+ln -sf $DOTFILES/nvm/default-packages $HOME/.nvm/default-packages

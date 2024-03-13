@@ -55,10 +55,14 @@ if [ ! -f "$HOME/.fonts/JetBrainsMonoNLNerdFont-Thin.ttf" ]; then
     wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
     unzip JetBrainsMono.zip
     rm \
-         JetBrainsMono.zip \
-	 OFL.txt \
-	 README.md
+        JetBrainsMono.zip \
+        OFL.txt \
+        README.md
 fi
+
+# Node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+nvm install node
 
 echo "Removing setup-tmp folder..."
 rm -rf "$HOME/code/setup-tmp"

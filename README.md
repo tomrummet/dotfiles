@@ -56,3 +56,5 @@ Configuration for:
     - [x] machine specific aliases and environment variables
 - [ ] neovim
 - [x] create install prerequisites script
+- [ ] composer
+- [ ] gitconfig

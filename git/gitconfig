@@ -1,0 +1,5 @@
+[core]
+	excludesfile = /home/ash/.gitignore
+[user]
+	email = ash@helash.dev
+	name = " Allan Schmidt Hansen"

@@ -31,7 +31,7 @@ ln -sf $DOTFILES/nvim $HOME/.config/nvim
 
 # Git
 ln -sf $DOTFILES/git/gitignore $HOME/.gitignore
-git config --global core.excludesfile $HOME/.gitignore
+ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 
 # Script
 mkdir -p $HOME/.local/bin

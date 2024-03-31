@@ -17,7 +17,7 @@ The following software needs to be installed:
 - FZF <https://github.com/junegunn/fzf>
 - ripgrep (rg) <https://github.com/BurntSushi/ripgrep>
 
-All this can be install by running `./setup`.
+All this can be install by running `./setup` after cloning repository.
 
 ### Assumptions
 
@@ -35,7 +35,7 @@ git clone git@github.com:ash-lund/dotfiles.git
 ./install
 ```
 
-**Optional**: If you want to install prerequisites, then run `./setup` before `./install`.
+**Optional**: If you want to install prerequisites, then run `./setup` before `./install`. This also installs PHP, Composer and Docker.
 
 ### Windows
 
@@ -56,5 +56,5 @@ Configuration for:
     - [x] machine specific aliases and environment variables
 - [ ] neovim
 - [x] create install prerequisites script
-- [ ] composer
-- [ ] gitconfig
+- [x] composer
+- [x] gitconfig

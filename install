@@ -33,6 +33,10 @@ ln -sf $DOTFILES/nvim $HOME/.config/nvim
 ln -sf $DOTFILES/git/gitignore $HOME/.gitignore
 ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 
+if [ ! -f "$HOME/.gitconfig.local" ]; then
+    cp $DOTFILES/git/gitconfig.local.example $HOME/.gitconfig.local
+fi
+
 # Script
 mkdir -p $HOME/.local/bin
 

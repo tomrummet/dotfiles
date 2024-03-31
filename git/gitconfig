@@ -1,6 +1,5 @@
 [core]
-    excludesfile = /home/ash/.gitignore
+    excludesfile = ~/.gitignore
 
-[user]
-    email = ash@helash.dev
-    name = " Allan Schmidt Hansen"
+[include]
+        path = ~/.gitconfig.local

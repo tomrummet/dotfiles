@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# Install required software
+# Installs Docker and Docker Compose
 sudo apt update
 
 sudo apt install -y \

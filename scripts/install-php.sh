@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-# Install required software
+# Installs PHP 8.2 and modules
 sudo apt update
 
 sudo apt install -y \
@@ -11,7 +11,7 @@ sudo apt install -y \
 
 sudo add-apt-repository ppa:ondrej/php -y
 
-sudo apt update && sudo apt upgrade
+sudo apt update
 
 sudo apt install -y --no-install-recommends \
     php8.2 \

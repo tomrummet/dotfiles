@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 # Install required software
-sudo apt update
+sudo apt update && sudo apt upgrade
 
 sudo apt install -y \
     zsh \

@@ -53,6 +53,9 @@ require("lazy").setup({
 
     -- Completion
     { import = 'user.plugins.cmp' },
+
+    -- Github Copilot
+    "github/copilot.vim",
 }, {
   checker = {
     enabled = true,

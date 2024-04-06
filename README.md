@@ -58,3 +58,4 @@ Configuration for:
 - [x] create install prerequisites script
 - [x] composer
 - [x] gitconfig
+- [] move code alias to work aliases

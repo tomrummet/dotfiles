@@ -1,5 +1,6 @@
 # Aliases intended for work use
 
+alias dcgo="dcup && dcbash"
 alias dcr='docker-compose restart'
 alias dcbash='docker-compose exec -u www-data php bash'
 

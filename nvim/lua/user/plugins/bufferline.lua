@@ -73,7 +73,6 @@ return {
       hint_visible = inactiveBg,
       info = inactiveBg,
       info_visible = inactiveBg,
-
       warning = inactiveBg,
       warning_visible = inactiveBg,
       error = inactiveBg,
@@ -103,7 +102,6 @@ return {
       },
 
       -- Tabs
-
       tab = inactiveBg,
       tab_separator = {
         fg = { attribute = 'bg', highlight = 'StatusLine' },

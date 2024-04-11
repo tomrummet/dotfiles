@@ -54,6 +54,9 @@ require("lazy").setup({
     -- Completion
     { import = 'user.plugins.cmp' },
 
+    -- PHP Refactoring Tools
+    { import = 'user.plugins.phpactor' },
+
     -- Github Copilot
     { import = 'user.plugins.copilot' },
 }, {

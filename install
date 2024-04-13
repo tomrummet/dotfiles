@@ -2,6 +2,11 @@
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
 
+# Scripts
+mkdir -p $HOME/.local/bin
+
+ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t
+
 echo "Is this hell?"
 echo -n "y/n: "
 
@@ -13,6 +18,9 @@ if [ $hell = "y" ]; then
 else
     ln -sf $DOTFILES/zsh/aliases/work $HOME/.aliases
     ln -sf $DOTFILES/zsh/env/work $HOME/.zshenv
+
+    ln -sf $DOTFILES/scripts/2split $HOME/.local/bin/2split
+    ln -sf $DOTFILES/scripts/3split $HOME/.local/bin/3split
 fi
 
 # Zsh
@@ -36,11 +44,6 @@ ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
 if [ ! -f "$HOME/.gitconfig.local" ]; then
     cp $DOTFILES/git/gitconfig.local.example $HOME/.gitconfig.local
 fi
-
-# Script
-mkdir -p $HOME/.local/bin
-
-ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t
 
 # NVM (Node Version Manager)
 mkdir -p $HOME/.nvm

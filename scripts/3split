@@ -3,9 +3,13 @@
 tmux new -A -s tri-panes -n tri-window -d
 
 tmux split-window -h -t tri-panes
+tmux send-keys -t tri-panes "cd ~/code/metazo" Enter
+tmux send-keys -t tri-panes "clear" Enter
 tmux send-keys -t tri-panes "dcgo" Enter
 
 tmux split-window -v -t tri-panes
+tmux send-keys -t tri-panes "cd ~/code/metazo" Enter
+tmux send-keys -t tri-panes "clear" Enter
 tmux send-keys -t tri-panes "lt" Enter
 
 tmux switch-client -t tri-panes

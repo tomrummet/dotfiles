@@ -19,8 +19,8 @@ else
     ln -sf $DOTFILES/zsh/aliases/work $HOME/.aliases
     ln -sf $DOTFILES/zsh/env/work $HOME/.zshenv
 
-    ln -sf $DOTFILES/scripts/2split $HOME/.local/bin/2split
-    ln -sf $DOTFILES/scripts/3split $HOME/.local/bin/3split
+    ln -sf $DOTFILES/tmux/2pan $HOME/.local/bin/2pan
+    ln -sf $DOTFILES/tmux/3pan $HOME/.local/bin/3pan
 fi
 
 # Zsh

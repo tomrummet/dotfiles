@@ -1,7 +1,7 @@
 # Personal zsh config of Ash (ash@helash.dev)
 
 if [ "$TMUX" = "" ]; then
-    tmux new -s "go!" -c $HOME/code/;
+    tmux new-session -A -s "go!" -c $HOME/code/;
 fi
 
 export ZSH=$HOME/.oh-my-zsh

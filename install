@@ -48,3 +48,6 @@ fi
 # NVM (Node Version Manager)
 mkdir -p $HOME/.nvm
 ln -sf $DOTFILES/nvm/default-packages $HOME/.nvm/default-packages
+
+# Hyfetch (fork of Neofetch)
+ln -sf $DOTFILES/hyfetch/hyfetch.json $HOME/.config/hyfetch.json

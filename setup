@@ -17,12 +17,7 @@ sudo apt install -y \
     gettext \
     cmake \
     xclip \
-    build-essential \
-    python3 \
-    python3-pip
-
-# Install hyfetch
-pip3 install hyfetch
+    build-essential
 
 # Install PHP and common modules
 ./scripts/install-php.sh
@@ -43,7 +38,6 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     # Install and setup OhMyZsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
-
 
 if [ ! -d "$HOME/code/setup-tmp" ]; then
     echo "Creating setup-tmp folder..."
@@ -83,4 +77,4 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 nvm install node
 
 echo "Removing setup-tmp folder..."
-rm -rf "$HOME/code/setup-tmp"
+sudo rm -rf "$HOME/code/setup-tmp"

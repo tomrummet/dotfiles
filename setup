@@ -54,6 +54,11 @@ if [ $(dpkg-query -W -f='${Status}' neovim 2>/dev/null | grep -c "ok installed")
     cd build && sudo cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 fi
 
+# Install PHPActor
+curl -Lo phpactor.phar https://github.com/phpactor/phpactor/releases/latest/download/phpactor.phar
+chmod a+x phpactor.phar
+mv phpactor.phar ~/.local/bin/phpactor
+
 if [ ! -d "$HOME/.fonts" ]; then
     echo "Creating .fonts folder..."
     mkdir -p ~/.fonts

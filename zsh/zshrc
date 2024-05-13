@@ -32,8 +32,8 @@ alias vim=nvim
 alias pkey="xclip -selection clipboard ~/.ssh/id_rsa.pub"
 
 # Docker
-alias dcup="docker-compose up -d"
-alias dcdown="docker-compose down"
+alias dcup="docker compose up -d"
+alias dcdown="docker compose down"
 
 source $HOME/.aliases
 

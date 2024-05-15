@@ -17,7 +17,8 @@ sudo apt install -y \
     gettext \
     cmake \
     xclip \
-    build-essential
+    build-essential \
+    ufw
 
 # Install PHP and common modules
 ./scripts/install-php.sh

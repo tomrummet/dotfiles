@@ -25,6 +25,9 @@ sudo apt install -y \
 # Install Composer
 ./scripts/install-composer.sh
 
+# Install Laravel global
+composer global require laravel/installer
+
 # Install Docker and Docker Compose
 ./scripts/install-docker.sh
 

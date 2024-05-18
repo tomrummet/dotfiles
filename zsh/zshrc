@@ -30,6 +30,7 @@ export NVM_DIR="$HOME/.nvm"
 # Aliases
 alias vim=nvim
 alias pkey="xclip -selection clipboard ~/.ssh/id_rsa.pub"
+alias ff="clear && fastfetch"
 
 # Docker
 alias dcup="docker compose up -d"

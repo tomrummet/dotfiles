@@ -7,12 +7,9 @@ sudo apt install -y \
     ca-certificates \
     curl
 
-echo "Are you running Debian?"
-echo -n "y/n: "
+IS_DEBIAN=$(uname -v | rg -c "Debian")
 
-read -r debian
-
-if [ $debian = "y" ]; then
+if [ "$IS_DEBIAN" = "1" ]; then
     if [ ! -f "/etc/apt/keyrings/docker.asc" ]; then
         sudo install -m 0755 -d /etc/apt/keyrings
         sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc

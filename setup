@@ -21,7 +21,7 @@ sudo apt install -y \
     ufw
 
 # Install PHP and common modules
-./scripts/install-php.sh
+scripts/install-php.sh
 
 # Install Composer
 ./scripts/install-composer.sh
@@ -34,7 +34,7 @@ composer global require laravel/installer
 
 # Install Oh-My-Zsh if not installed
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    echo "Setting up zsh and OhMyZsh..."
+    echo ">> Setting up zsh and OhMyZsh..."
 
     # Switch from bash to zsh
     chsh -s $(which zsh)
@@ -44,13 +44,13 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 if [ ! -d "$HOME/code/setup-tmp" ]; then
-    echo "Creating setup-tmp folder..."
+    echo ">> Creating setup-tmp folder..."
     mkdir -p ~/code/setup-tmp
 fi
 
 # Install neovim
 if [ $(dpkg-query -W -f='${Status}' neovim 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
-    echo "Installing Neovim..."
+    echo ">> Installing Neovim..."
     cd ~/code/setup-tmp/
 
     git clone https://github.com/neovim/neovim
@@ -64,13 +64,13 @@ chmod a+x phpactor.phar
 mv phpactor.phar ~/.local/bin/phpactor
 
 if [ ! -d "$HOME/.fonts" ]; then
-    echo "Creating .fonts folder..."
+    echo ">> Creating .fonts folder..."
     mkdir -p ~/.fonts
 fi
 
 if [ ! -f "$HOME/.fonts/JetBrainsMonoNLNerdFont-Thin.ttf" ]; then
     # Setup fonts (from NerdFonts.com)
-    echo "Downloading JetBrainsMono font from nerdfonts.com..."
+    echo ">> Downloading JetBrainsMono font from nerdfonts.com..."
 
     cd ~/.fonts/
     wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
@@ -83,7 +83,8 @@ fi
 
 # Node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-nvm install node
 
-echo "Removing setup-tmp folder..."
-sudo rm -rf "$HOME/code/setup-tmp"
+if [ -d "$HOME/code/setup-tmp" ]; then
+    echo ">> Removing setup-tmp folder..."
+    sudo rm -rf "$HOME/code/setup-tmp"
+fi

@@ -1,15 +1,22 @@
 #!/usr/bin/env sh
 
 # Installs PHP 8.2 and modules
-sudo apt update
-
+#
 sudo apt install -y \
     ca-certificates \
     apt-transport-https \
-    software-properties-common \
     lsb-release
 
-sudo add-apt-repository ppa:ondrej/php -y
+IS_DEBIAN=$(uname -v | rg -c "Debian")
+
+if [ "$IS_DEBIAN" = "1" ]; then
+    sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+    sudo sh -c 'echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" > /etc/apt/sources.list.d/php.list'
+else
+    sudo apt install -y software-properties-common
+
+    sudo add-apt-repository ppa:ondrej/php -y
+fi
 
 sudo apt update
 

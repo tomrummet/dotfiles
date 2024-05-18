@@ -41,6 +41,8 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 
     # Install and setup OhMyZsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
 if [ ! -d "$HOME/code/setup-tmp" ]; then

@@ -51,10 +51,12 @@ Configuration for:
 
 - [x] create install script
 - [x] terminal (alacritty)
-- [x] tmux
+- xx] tmux
 - [x] ohmyzsh
     - [x] machine specific aliases and environment variables
-- [ ] neovim
+    - [ ] plugins
+- [x] neovim
+    - [ ] xdebug
 - [x] create install prerequisites script
 - [x] composer
 - [x] gitconfig

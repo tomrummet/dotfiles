@@ -30,6 +30,8 @@ prompt_context() {
   prompt_segment black default "${emojis[$RAND_EMOJI_N]} "
 }
 
+eval "$(starship init zsh)"
+
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 export NVM_DIR="$HOME/.nvm"

@@ -26,6 +26,9 @@ fi
 # Zsh
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 
+# Startship
+ln -sf $DOTFILES/starship/starship.toml $HOME/.config/starship.toml
+
 # Alacritty (switch to .toml when updated to v0.13.X)
 mkdir -p $HOME/.config/alacritty
 ln -sf $DOTFILES/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml

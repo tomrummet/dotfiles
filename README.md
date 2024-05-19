@@ -51,7 +51,7 @@ Configuration for:
 
 - [x] create install script
 - [x] terminal (alacritty)
-- xx] tmux
+- [x] tmux
 - [x] ohmyzsh
     - [x] machine specific aliases and environment variables
     - [ ] plugins

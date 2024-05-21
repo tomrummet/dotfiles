@@ -1,6 +1,6 @@
 # Aliases intended for work use
 
-alias "ipwrun"="docker compose exec -u www-data php php"
+alias metazo="docker compose exec -u www-data php php"
 alias dcgo="dcup && dcbash"
 alias dcr='docker compose restart'
 alias dcbash='docker compose exec -u www-data php bash'
@@ -9,5 +9,5 @@ alias lta='tail -f {metazo/sites/*,var/log/php}.log'
 alias ltr='truncate -s 0 var/log/php.log && truncate -s 0 metazo/sites/*.log'
 alias lt='ltr && lta'
 
-alias pstorm='phpstorm . > /dev/null 2>&1 &'
-alias code="flatpak run com.visualstudio.code . > /dev/null 2>&1 &"
+alias runtest='metazo bin/phpunit.phar -c phpunit.xml --testsuite=All --debug --colors=always'
+

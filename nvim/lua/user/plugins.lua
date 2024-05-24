@@ -59,6 +59,9 @@ require("lazy").setup({
 
     -- Github Copilot
     { import = 'user.plugins.copilot' },
+
+    -- Debug Apapter Protocol
+    { import = 'user.plugins.dap' },
 }, {
   checker = {
     enabled = true,

@@ -59,11 +59,6 @@ return {
                 },
             },
         },
-
-        -- VsCode launch.json parser
-        {
-            "folke/neoconf.nvim",
-        },
     },
 
     -- stylua: ignore

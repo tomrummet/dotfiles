@@ -48,6 +48,8 @@ require("lazy").setup({
     -- Treesitter
     { import = 'user.plugins.treesitter' },
 
+    "folke/neoconf.nvim",
+
     -- Language Server Protocol.
     { import = 'user.plugins.lspconfig' },
 

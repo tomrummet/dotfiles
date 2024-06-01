@@ -1,55 +1,99 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
-DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
-WIFI=$(nmcli -t -f active,ssid dev wifi | rg "yes" | cut -d\: -f2)
+# Install required software
+sudo apt update && sudo apt upgrade
 
-# Scripts
-mkdir -p $HOME/.local/bin
+sudo apt install -y \
+    zsh \
+    vim \
+    alacritty \
+    tmux \
+    fzf \
+    ripgrep \
+    curl \
+    wget \
+    unzip \
+    ninja-build \
+    gettext \
+    cmake \
+    xclip \
+    build-essential \
+    ufw
 
-ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t
+# Install PHP and common modules
+./scripts/install-php.sh
 
-if [ $WIFI = "Hellroad" ]; then
-    echo ">> Setting up symlinks for aliases and env for home"
+# Install PHPActor
+curl -Lo phpactor.phar https://github.com/phpactor/phpactor/releases/latest/download/phpactor.phar
+chmod a+x phpactor.phar
+mv phpactor.phar ~/.local/bin/phpactor
 
-    ln -sf $DOTFILES/zsh/aliases/home $HOME/.aliases
-    ln -sf $DOTFILES/zsh/env/home $HOME/.zshenv
-else
-    echo ">> Setting up symlinks for aliases and env for work"
+# Install Composer
+./scripts/install-composer.sh
 
-    ln -sf $DOTFILES/zsh/aliases/work $HOME/.aliases
-    ln -sf $DOTFILES/zsh/env/work $HOME/.zshenv
+# Install Laravel global
+composer global require laravel/installer
 
-    ln -sf $DOTFILES/tmux/2pan $HOME/.local/bin/2pan
-    ln -sf $DOTFILES/tmux/3pan $HOME/.local/bin/3pan
+# Install Docker and Docker Compose
+./scripts/install-docker.sh
+
+if [ ! -d "$HOME/code/setup-tmp" ]; then
+    echo ">> Creating setup-tmp folder..."
+    mkdir -p ~/code/setup-tmp
 fi
 
-# Zsh
-ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
+# Install Oh-My-Zsh if not installed
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo ">> Setting up zsh and OhMyZsh..."
 
-# Startship
-ln -sf $DOTFILES/starship/starship.toml $HOME/.config/starship.toml
+    # Switch from bash to zsh
+    chsh -s $(which zsh)
 
-# Alacritty (switch to .toml when updated to v0.13.X)
-mkdir -p $HOME/.config/alacritty
-ln -sf $DOTFILES/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+    # Install and setup OhMyZsh
+    curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
 
-# Tmux
-ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
-
-# Neovim
-rm -rf $HOME/.config/nvim
-ln -sf $DOTFILES/nvim $HOME/.config/nvim
-
-# Git
-ln -sf $DOTFILES/git/gitignore $HOME/.gitignore
-ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
-
-if [ ! -f "$HOME/.gitconfig.local" ]; then
-    echo "Remember to update .gitconfig.local"
-    cp $DOTFILES/git/gitconfig.local.example $HOME/.gitconfig.local
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
-# NVM (Node Version Manager)
-mkdir -p $HOME/.nvm
-ln -sf $DOTFILES/nvm/default-packages $HOME/.nvm/default-packages
+if [ ! -f "$HOME/.config/starship.toml" ]; then
+    # Install Starship
+    cd $HOME/code/setup-tmp/
+    curl -sS https://starship.rs/install.sh | sh
+fi
 
+# Install neovim
+if [ $(dpkg-query -W -f='${Status}' neovim 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
+    echo ">> Installing Neovim..."
+    cd ~/code/setup-tmp/
+
+    git clone https://github.com/neovim/neovim
+    cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo
+    cd build && sudo cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+fi
+
+
+if [ ! -d "$HOME/.fonts" ]; then
+    echo ">> Creating .fonts folder..."
+    mkdir -p ~/.fonts
+fi
+
+if [ ! -f "$HOME/.fonts/JetBrainsMonoNLNerdFont-Thin.ttf" ]; then
+    # Setup fonts (from NerdFonts.com)
+    echo ">> Downloading JetBrainsMono font from nerdfonts.com..."
+
+    cd ~/.fonts/
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
+    unzip JetBrainsMono.zip
+    rm \
+        JetBrainsMono.zip \
+        OFL.txt \
+        README.md
+fi
+
+# Node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh
+
+if [ -d "$HOME/code/setup-tmp" ]; then
+    echo ">> Removing setup-tmp folder..."
+    sudo rm -rf "$HOME/code/setup-tmp"
+fi

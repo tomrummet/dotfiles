@@ -29,4 +29,5 @@ sudo apt install -y --no-install-recommends \
     php8.2-mbstring \
     php8.2-curl \
     php8.2-xml \
-    php8.2-bcmath
+    php8.2-bcmath \
+    php8.2-xdebug

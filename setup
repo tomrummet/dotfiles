@@ -19,6 +19,9 @@ if [ $WIFI = "Hellroad" ]; then
 
     mkdir -p $HOME/.config/polybar
     ln -sf $DOTFILES/wm/polybar/config.ini $HOME/.config/polybar/config.ini
+
+    mkdir -p $HOME/.config/rofi
+    ln -sf $DOTFILES/wm/rofi/config.rasi $HOME/.config/rofi/config.rasi
 else
     echo ">> Setting up symlinks for aliases and env for work"
 

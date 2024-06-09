@@ -13,6 +13,12 @@ if [ $WIFI = "Hellroad" ]; then
 
     ln -sf $DOTFILES/zsh/aliases/home $HOME/.aliases
     ln -sf $DOTFILES/zsh/env/home $HOME/.zshenv
+
+    mkdir -p $HOME/.config/i3
+    ln -sf $DOTFILES/wm/i3/config $HOME/.config/i3/config
+
+    mkdir -p $HOME/.config/polybar
+    ln -sf $DOTFILES/wm/polybar/config.ini $HOME/.config/polybar/config.ini
 else
     echo ">> Setting up symlinks for aliases and env for work"
 
@@ -26,7 +32,7 @@ fi
 # Zsh
 ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
 
-# Startship
+# Starship
 ln -sf $DOTFILES/starship/starship.toml $HOME/.config/starship.toml
 
 # Alacritty (switch to .toml when updated to v0.13.X)

@@ -14,7 +14,7 @@ set $mod Mod4
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/6-DJI_0111-Enhanced.jpg
 
 # Alternative statusbar for i3
-exec_always killall polybar
+exec_always killall -q polybar
 exec_always --no-startup-id polybar
 exec_always --no-startup-id xrandr --output DP-3 --below eDP-1
 

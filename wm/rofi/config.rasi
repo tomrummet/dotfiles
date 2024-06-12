@@ -1,4 +1,4 @@
-configuration{
+configuration {
     modi: "run,window,combi";
     icon-theme: "Oranchelo";
     show-icons: true;
@@ -12,5 +12,4 @@ configuration{
     display-window: " 🪟  Window";
     sidebar-mode: true;
 }
-
 @theme "catppuccin-mocha"

@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
-WIFI=$(nmcli -t -f active,ssid dev wifi | rg "yes" | cut -d\: -f2)
+MACHINA="HELL"
+
+read -p "Run setup for work (yN)? " yn
+case $yn in
+    [Yy]* ) MACHINA="WORK";;
+    [Nn]* ) MACHINA="HELL";;
+    * ) echo "Running default setup for $MACHINA.";;
+esac
 
 # Scripts
 mkdir -p $HOME/.local/bin
 
 ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t
 
-if [ $WIFI = "Hellroad" ]; then
+if [ $MACHINA = "HELL" ]; then
     echo ">> Setting up symlinks for aliases and env for home"
 
     ln -sf $DOTFILES/zsh/aliases/home $HOME/.aliases

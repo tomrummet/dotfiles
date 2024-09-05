@@ -20,7 +20,7 @@ The following software needs to be installed:
 - FZF <https://github.com/junegunn/fzf>
 - ripgrep (rg) <https://github.com/BurntSushi/ripgrep>
 
-All this can be install by running `./install` after cloning repository.
+All this can be installed by running `./install` after cloning repository.
 
 ### Assumptions
 
@@ -33,8 +33,10 @@ All this can be install by running `./install` after cloning repository.
 ### Linux (+ WSL2)
 
 ```sh
-cd ~/code/
+mkdir -p ~/code/tools/
+cd ~/code/tools/
 git clone git@github.com:ash-lund/dotfiles.git
+cd dotfiles/
 ./setup
 ```
 
@@ -42,7 +44,7 @@ git clone git@github.com:ash-lund/dotfiles.git
 
 ### Windows
 
-Usage of this dotfiles repository requires WSL2.
+Usage of this dotfiles repository expects WSL2.
 
 #### Alacritty
 

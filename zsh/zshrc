@@ -45,6 +45,7 @@ export NVM_DIR="$HOME/.nvm"
 # Aliases
 alias vim=nvim
 alias pkey="xclip -selection clipboard ~/.ssh/id_rsa.pub"
+alias myip="curl -s https://myip.dk | xclip -selection clipboard"
 alias ff="clear && fastfetch"
 
 # Docker

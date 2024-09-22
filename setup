@@ -21,15 +21,16 @@ if [ $MACHINA = "HELL" ]; then
     ln -sf $DOTFILES/zsh/aliases/home $HOME/.aliases
     ln -sf $DOTFILES/zsh/env/home $HOME/.zshenv
 
-    mkdir -p $HOME/.config/i3
-    ln -sf $DOTFILES/wm/i3/config $HOME/.config/i3/config
+    # Include if using I3WM
+    # mkdir -p $HOME/.config/i3
+    # ln -sf $DOTFILES/wm/i3/config $HOME/.config/i3/config
 
-    mkdir -p $HOME/.config/polybar
-    ln -sf $DOTFILES/wm/polybar/config.ini $HOME/.config/polybar/config.ini
+    # mkdir -p $HOME/.config/polybar
+    # ln -sf $DOTFILES/wm/polybar/config.ini $HOME/.config/polybar/config.ini
 
-    mkdir -p $HOME/.config/rofi
-    ln -sf $DOTFILES/wm/rofi/config.rasi $HOME/.config/rofi/config.rasi
-    ln -sf $DOTFILES/wm/rofi/catppuccin-mocha.rasi $HOME/.config/rofi/catppuccin-mocha.rasi
+    # mkdir -p $HOME/.config/rofi
+    # ln -sf $DOTFILES/wm/rofi/config.rasi $HOME/.config/rofi/config.rasi
+    # ln -sf $DOTFILES/wm/rofi/catppuccin-mocha.rasi $HOME/.config/rofi/catppuccin-mocha.rasi
 else
     echo ">> Setting up symlinks for aliases and env for work"
 

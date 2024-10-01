@@ -28,11 +28,15 @@ curl -Lo phpactor.phar https://github.com/phpactor/phpactor/releases/latest/down
 chmod a+x phpactor.phar
 mv phpactor.phar ~/.local/bin/phpactor
 
-# Install Composer
-./scripts/install-composer.sh
+# Install Composer if not installed
+if [ ! -f "/usr/local/bin/composer" ]; then
+    ./scripts/install-composer.sh
+fi
 
-# Install Laravel global
-composer global require laravel/installer
+# Install Laravel global if not installed
+if [ ! -f "$HOME/.config/composer/vendor/bin/laravel" ]; then
+    composer global require laravel/installer
+fi
 
 # Install Docker and Docker Compose
 ./scripts/install-docker.sh

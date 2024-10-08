@@ -30,10 +30,6 @@ prompt_context() {
   prompt_segment black default "${emojis[$RAND_EMOJI_N]} "
 }
 
-function go() {
-    /usr/bin/ssh -t $1 '[ ! -d /var/www/'$1'/www ] && echo "The given URL does not exist on the server, exiting..." && exit; cd /var/www/'$1'/www; bash -l'
-}
-
 eval "$(starship init zsh)"
 
 export EDITOR=nvim

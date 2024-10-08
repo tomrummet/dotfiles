@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ssh -t $1 '[ ! -d /var/www/'$1'/www ] && echo "The given URL does not exist on the server, exiting..." && exit; cd /var/www/'$1'/www; bash -l'

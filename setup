@@ -14,6 +14,8 @@ esac
 mkdir -p $HOME/.local/bin
 
 ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t
+ln -sf $DOTFILES/scripts/jump $HOME/.local/bin/jump
+ln -sf $DOTFILES/scripts/vs-jump $HOME/.local/bin/vs-jump
 
 if [ $MACHINA = "HELL" ]; then
     echo ">> Setting up symlinks for aliases and env for home"

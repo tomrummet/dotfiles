@@ -1,0 +1,36 @@
+#! /bin/bash
+# https://terracoders.com/blog/bash-simple-script-changing-display-brightness-xrandr
+# Script for adjusting display brightness and gamma. Feed the script a value
+# between 1-10 to affect brightness. Gamma is a fixed night mode value with reduced
+# blue gamma.
+# Usage:
+# $ ./dimmer.sh 7 night
+# $ ./dimmer 10
+
+if [ "$1" = "" ]; then
+  echo "Usage: $0 +/- [night]"
+  exit
+fi
+
+current=$(xrandr --verbose | grep -m 1 -i brightness | cut -f2 -d ' ')
+
+if [[ "$current" = 1.0 && "$1" = + ]] || [[ "$current" = 0.10 && "$1" = - ]] ; then
+  exit
+fi
+
+brightness=$(bc <<< "$current $1 0.10")
+
+# adjust brightness
+# xrandr --output eDP-1 --brightness "$brightness"
+
+# if night option passed adjust both brightness and gamma
+if [ "$2" = night ]; then
+  xrandr --output eDP-1 --brightness "$brightness" --gamma 1.0:0.95:0.85
+else
+  xrandr --output eDP-1 --brightness "$brightness" --gamma 1.0:1.0:1.0
+fi
+
+# Optional -  double check settings
+# echo "$(xrandr --verbose | grep Brightness)" | tail -n1
+# echo "$(xrandr --verbose | grep Gamma)" | tail -n1
+

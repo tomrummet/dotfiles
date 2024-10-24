@@ -60,7 +60,7 @@ require("lazy").setup({
     { import = 'user.plugins.phpactor' },
 
     -- Github Copilot
-    { import = 'user.plugins.copilot' },
+    -- { import = 'user.plugins.copilot' },
 
     -- Debug Apapter Protocol
     { import = 'user.plugins.dap' },

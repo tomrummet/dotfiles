@@ -13,9 +13,9 @@ esac
 # Scripts
 mkdir -p $HOME/.local/bin
 
-ln -sf $DOTFILES/scripts/t $HOME/.local/bin/t
-ln -sf $DOTFILES/scripts/jump $HOME/.local/bin/jump
-ln -sf $DOTFILES/scripts/vs-jump $HOME/.local/bin/vs-jump
+ln -sf $DOTFILES/utils/t $HOME/.local/bin/t
+ln -sf $DOTFILES/utils/j $HOME/.local/bin/j
+ln -sf $DOTFILES/utils/vsj $HOME/.local/bin/vsj
 
 if [ $MACHINA = "HELL" ]; then
     echo ">> Setting up symlinks for aliases and env for home"
@@ -26,7 +26,7 @@ if [ $MACHINA = "HELL" ]; then
     # Include if using I3WM
     # mkdir -p $HOME/.config/i3
     # ln -sf $DOTFILES/wm/i3/config $HOME/.config/i3/config
-    ln -sf $DOTFILES/scripts/dimmer $HOME/.local/bin/dimmer
+    ln -sf $DOTFILES/utils/dimmer $HOME/.local/bin/dimmer
 
     # mkdir -p $HOME/.config/polybar
     # ln -sf $DOTFILES/wm/polybar/config.ini $HOME/.config/polybar/config.ini

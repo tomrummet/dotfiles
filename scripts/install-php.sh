@@ -3,6 +3,13 @@
 IS_INSTALLED=$(php -v | rg -c "PHP 8.2.")
 
 if [ ! "$IS_INSTALLED" = "1" ]; then
+    echo "Installing PHP and commen extensions"
+
+    # Installs Docker and Docker Compose
+    if [ ! "$RUNNING_DOTFILES" = 1 ]; then
+        sudo apt update
+    fi
+
     # Installs PHP 8.2 and modules
     sudo apt install -y \
         ca-certificates \

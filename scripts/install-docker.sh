@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
 
 # Installs Docker and Docker Compose
-sudo apt update
+if [ ! "$RUNNING_DOTFILES" = 1 ]; then
+    sudo apt update
+fi
 
 sudo apt install -y \
     ca-certificates \

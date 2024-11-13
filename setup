@@ -14,6 +14,8 @@ esac
 mkdir -p $HOME/.local/bin
 
 ln -sf $DOTFILES/utils/t $HOME/.local/bin/t
+
+# Shortcuts for jumping to server SSH/VS Code
 ln -sf $DOTFILES/utils/j $HOME/.local/bin/j
 ln -sf $DOTFILES/utils/vsj $HOME/.local/bin/vsj
 
@@ -23,17 +25,14 @@ if [ $MACHINA = "HELL" ]; then
     ln -sf $DOTFILES/zsh/aliases/home $HOME/.aliases
     ln -sf $DOTFILES/zsh/env/home $HOME/.zshenv
 
-    # Include if using I3WM
-    # mkdir -p $HOME/.config/i3
-    # ln -sf $DOTFILES/wm/i3/config $HOME/.config/i3/config
-    ln -sf $DOTFILES/utils/dimmer $HOME/.local/bin/dimmer
-
-    # mkdir -p $HOME/.config/polybar
-    # ln -sf $DOTFILES/wm/polybar/config.ini $HOME/.config/polybar/config.ini
-
-    # mkdir -p $HOME/.config/rofi
-    # ln -sf $DOTFILES/wm/rofi/config.rasi $HOME/.config/rofi/config.rasi
-    # ln -sf $DOTFILES/wm/rofi/catppuccin-mocha.rasi $HOME/.config/rofi/catppuccin-mocha.rasi
+    read -p "Add config for i3 (yN)? " yn
+    case $yn in
+        [Yy]* )
+            ./scripts/setup-i3.sh
+            ;;
+        * )
+            ;;
+    esac
 else
     echo ">> Setting up symlinks for aliases and env for work"
 

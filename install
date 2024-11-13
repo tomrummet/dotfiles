@@ -1,7 +1,10 @@
 #!/usr/bin/env sh
 
+# Setting env to skip redundant commands
+export RUNNING_DOTFILES=1
+
 # Install required software
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 
 sudo apt install -y \
     zsh \
@@ -20,26 +23,43 @@ sudo apt install -y \
     build-essential \
     ufw
 
-# Install PHP and common modules
-./scripts/install-php.sh
-
-# Install PHPActor
-curl -Lo phpactor.phar https://github.com/phpactor/phpactor/releases/latest/download/phpactor.phar
-chmod a+x phpactor.phar
-mv phpactor.phar ~/.local/bin/phpactor
+# Install PHP and common extensions
+read -p "Install PHP (Yn)? " yn
+case $yn in
+    [Nn]* ) ;;
+    * )
+        ./scripts/install-php.sh
+        ;;
+esac
 
 # Install Composer if not installed
-if [ ! -f "/usr/local/bin/composer" ]; then
-    ./scripts/install-composer.sh
-fi
+read -p "Install Composer (Yn)? " yn
+case $yn in
+    [Nn]* ) ;;
+    * )
+        ./scripts/install-composer.sh
+        ;;
+esac
 
 # Install Laravel global if not installed
-if [ ! -f "$HOME/.config/composer/vendor/bin/laravel" ]; then
-    composer global require laravel/installer
-fi
+read -p "Install Laravel globally (Yn)?" yn
+case $yn in
+    [Nn]* ) ;;
+    * )
+        if [ ! -f "$HOME/.config/composer/vendor/bin/laravel" ]; then
+            composer global require laravel/installer
+        fi
+        ;;
+esac
 
 # Install Docker and Docker Compose
-./scripts/install-docker.sh
+read -p "Install Docker (Yn)? " yn
+case $yn in
+    [Nn]* ) ;;
+    * )
+        ./scripts/install-docker.sh
+        ;;
+esac
 
 if [ ! -d "$HOME/code/setup-tmp" ]; then
     echo ">> Creating setup-tmp folder..."
@@ -65,7 +85,16 @@ if [ ! -f "$HOME/.config/starship.toml" ]; then
     curl -sS https://starship.rs/install.sh | sh
 fi
 
-# Install neovim
+# Install PHPActor (used in Neovim)
+if [ ! -f "$HOME/.local/bin/phpactor" ]; then
+    echo "Installing PHPActor"
+
+    curl -Lo phpactor.phar https://github.com/phpactor/phpactor/releases/latest/download/phpactor.phar
+    chmod a+x phpactor.phar
+    mv phpactor.phar ~/.local/bin/phpactor
+fi
+
+# Install Neovim
 if [ $(dpkg-query -W -f='${Status}' neovim 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
     echo ">> Installing Neovim..."
     cd ~/code/setup-tmp/
@@ -74,7 +103,6 @@ if [ $(dpkg-query -W -f='${Status}' neovim 2>/dev/null | grep -c "ok installed")
     cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo
     cd build && sudo cpack -G DEB && sudo dpkg -i nvim-linux64.deb
 fi
-
 
 if [ ! -d "$HOME/.fonts" ]; then
     echo ">> Creating .fonts folder..."
@@ -101,3 +129,5 @@ if [ -d "$HOME/code/setup-tmp" ]; then
     echo ">> Removing setup-tmp folder..."
     sudo rm -rf "$HOME/code/setup-tmp"
 fi
+
+unset RUNNING_DOTFILES

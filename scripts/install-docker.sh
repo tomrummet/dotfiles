@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+echo ">>> Installing Docker"
+
 # Installs Docker and Docker Compose
 if [ ! "$RUNNING_DOTFILES" = 1 ]; then
     sudo apt update

@@ -1,8 +1,8 @@
 [core]
-    excludesfile = ~/.gitignore
+excludesfile = ~/.gitignore
 
 [init]
-    defaultBranch = "main"
+defaultBranch = "main"
 
 [include]
-        path = ~/.gitconfig.local
+path = ~/.gitconfig.local

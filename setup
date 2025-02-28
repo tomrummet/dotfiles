@@ -16,8 +16,8 @@ mkdir -p $HOME/.local/bin
 ln -sf $DOTFILES/utils/t $HOME/.local/bin/t
 
 # Shortcuts for jumping to server SSH/VS Code
-ln -sf $DOTFILES/utils/j $HOME/.local/bin/j
-ln -sf $DOTFILES/utils/vsj $HOME/.local/bin/vsj
+ln -sf $DOTFILES/utils/jump $HOME/.local/bin/jump
+ln -sf $DOTFILES/utils/vsjump $HOME/.local/bin/vsjump
 
 if [ $MACHINA = "HELL" ]; then
     echo ">> Setting up symlinks for aliases and env for home"

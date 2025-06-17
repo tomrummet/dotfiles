@@ -48,7 +48,7 @@ require("lazy").setup({
     -- Treesitter
     { import = 'user.plugins.treesitter' },
 
-    "folke/neoconf.nvim",
+    -- "folke/neoconf.nvim",
 
     -- Language Server Protocol.
     { import = 'user.plugins.lspconfig' },
@@ -60,7 +60,7 @@ require("lazy").setup({
     { import = 'user.plugins.phpactor' },
 
     -- Github Copilot
-    -- { import = 'user.plugins.copilot' },
+    { import = 'user.plugins.copilot' },
 
     -- Debug Apapter Protocol
     { import = 'user.plugins.dap' },
@@ -75,6 +75,6 @@ require("lazy").setup({
   },
 
   install = {
-    colorscheme = { "tokyonight", "habamax" },
-  },
+    colorscheme = { "catppuccin-mocha", "tokyonight", "habamax" },
+  }
 })

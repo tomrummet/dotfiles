@@ -4,13 +4,14 @@ return {
   dependencies = {
     'arkav/lualine-lsp-progress',
     'nvim-tree/nvim-web-devicons',
+    'catppuccin/nvim',
   },
   opts = {
     options = {
       section_separators = '',
       component_separators = '',
       globalstatus = true,
-      theme = 'codedark',
+      theme = 'catppuccin',
     },
     sections = {
       lualine_a = {

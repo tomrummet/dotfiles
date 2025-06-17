@@ -59,6 +59,8 @@ return {
       init_options = {
         ["language_server_phpstan.enabled"] = false,
         ["language_server_psalm.enabled"] = false,
+        ["php_code_sniffer.enabled"] = false,
+        ["language_server_php_cs_fixer.enabled"] = false,
         ["language_server.diagnostic_outsource"] = false,
       },
       handlers = {

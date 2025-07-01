@@ -43,7 +43,8 @@ require("lazy").setup({
     { import = 'user.plugins.gitsigns' },
 
     -- FloaTerm
-    { import = 'user.plugins.floaterm' },
+    -- { import = 'user.plugins.floaterm' },
+    { import = 'user.plugins.nfloaterm' },
 
     -- Treesitter
     { import = 'user.plugins.treesitter' },

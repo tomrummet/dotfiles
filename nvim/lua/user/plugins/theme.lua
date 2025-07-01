@@ -36,7 +36,7 @@ return {
                     -- },
                     -- FloatermBorder {
                     --     bg = prompt
-                    -- }
+                    -- },
                     NvimTree = {
                         -- bg = colors.peach
                     },

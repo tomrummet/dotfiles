@@ -2,7 +2,7 @@
 
 > (ALWAYS) WORK IN PROGRESS
 
-This repository is tested on Linux (Debian + PopOS + Raspberry Pi OS) and on Windows 11 (WSL2).
+This repository is tested on Linux (Debian + PopOS) and on Windows 11 (WSL2).
 
 Heavily inspired from the Laracast series  [Neovim as a PHP and Javascript IDE](https://laracasts.com/series/neovim-as-a-php-ide) from Jess Archer, and from her dotfiles repository on [Github](https://github.com/jessarcher/dotfiles).
 

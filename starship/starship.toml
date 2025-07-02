@@ -13,15 +13,12 @@ $git_status\
 $c\
 $rust\
 $golang\
-$nodejs\
 $php\
 $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:green bg:sapphire)\
-$conda\
-[](fg:sapphire bg:lavender)\
+[](fg:green bg:lavender)\
 $time\
 [ ](fg:lavender)\
 $cmd_duration\

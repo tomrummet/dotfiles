@@ -12,21 +12,16 @@ The purpose is to have an easy setup across my private labtop and my work labtop
 
 The following software needs to be installed:
 
-- Alacritty <https://alacritty.org/>
+- Ghostty <https://ghostty.org/>
 - Neovim <https://neovim.io/>
 - OhMyZsh <https://ohmyz.sh/>
 - Starship <https://starship.rs/>
 - Tmux <https://github.com/tmux/tmux>
 - FZF <https://github.com/junegunn/fzf>
 - ripgrep (rg) <https://github.com/BurntSushi/ripgrep>
+- JetBrainsMono font from Nerd Fonts <https://www.nerdfonts.com/>
 
 All this can be installed by running `./install` after cloning repository.
-
-### Assumptions
-
-- local code folder is located in `~/code/`
-- dotfiles folder is in `~/code/tools/`
-- it uses JetBrainsMono font from Nerd Fonts <https://www.nerdfonts.com/>
 
 ## Usage
 
@@ -45,8 +40,4 @@ cd dotfiles/
 ### Windows
 
 Usage of this dotfiles repository expects WSL2.
-
-#### Alacritty
-
-Copy the file `dotfiles/alacritty/alacritty-win11.toml` to `%AppData%\Roaming\alacritty\alacritty.toml`.
 

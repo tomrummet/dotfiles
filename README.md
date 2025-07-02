@@ -51,4 +51,4 @@ From WSL2 just follow the instructions above.
 ## Honourable mentions
 
 - Jess Archer <https://github.com/jessarcher> <https://jessarcher.com/>
-- ThePrimeagen for the `t` script
+- ThePrimeagen for the `t` script <https://github.com/ThePrimeagen>

@@ -24,15 +24,6 @@ if [ $MACHINA = "HELL" ]; then
 
     ln -sf $DOTFILES/zsh/aliases/home $HOME/.aliases
     ln -sf $DOTFILES/zsh/env/home $HOME/.zshenv
-
-    read -p "Add config for i3 (yN)? " yn
-    case $yn in
-        [Yy]* )
-            ./scripts/setup-i3.sh
-            ;;
-        * )
-            ;;
-    esac
 else
     echo ">> Setting up symlinks for aliases and env for work"
 

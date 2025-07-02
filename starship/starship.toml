@@ -13,15 +13,12 @@ $git_status\
 $c\
 $rust\
 $golang\
-$nodejs\
 $php\
 $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:green bg:sapphire)\
-$conda\
-[](fg:sapphire bg:lavender)\
+[](fg:green bg:lavender)\
 $time\
 [ ](fg:lavender)\
 $cmd_duration\
@@ -146,7 +143,7 @@ style = "bg:lavender"
 format = '[[  $time ](fg:crust bg:lavender)]($style)'
 
 [line_break]
-disabled = true
+disabled = false
 
 [character]
 disabled = false
@@ -161,8 +158,8 @@ vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 show_milliseconds = true
 format = " in $duration "
 style = "bg:lavender"
-disabled = false
-show_notifications = true
+disabled = true
+show_notifications = false
 min_time_to_notify = 45000
 
 [palettes.catppuccin_mocha]

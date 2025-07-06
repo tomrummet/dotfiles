@@ -2,7 +2,7 @@
 
 echo ">>> Installing PHP and commen extensions"
 
-IS_INSTALLED=$(php -v | rg -c "PHP 8.2.")
+IS_INSTALLED=$(php -v | rg -c "PHP 8.3.")
 
 if [ ! "$IS_INSTALLED" = "1" ]; then
     # Installs Docker and Docker Compose
@@ -10,7 +10,7 @@ if [ ! "$IS_INSTALLED" = "1" ]; then
         sudo apt update
     fi
 
-    # Installs PHP 8.2 and modules
+    # Installs PHP 8.3 and modules
     sudo apt install -y \
         ca-certificates \
         apt-transport-https \
@@ -30,14 +30,14 @@ if [ ! "$IS_INSTALLED" = "1" ]; then
     sudo apt update
 
     sudo apt install -y --no-install-recommends \
-        php8.2 \
-        php8.2-cli \
-        php8.2-mysql \
-        php8.2-zip \
-        php8.2-gd \
-        php8.2-mbstring \
-        php8.2-curl \
-        php8.2-xml \
-        php8.2-bcmath \
-        php8.2-xdebug
+        php8.3 \
+        php8.3-cli \
+        php8.3-mysql \
+        php8.3-zip \
+        php8.3-gd \
+        php8.3-mbstring \
+        php8.3-curl \
+        php8.3-xml \
+        php8.3-bcmath \
+        php8.3-xdebug
 fi

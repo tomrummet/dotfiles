@@ -2,7 +2,7 @@
 
 > (ALWAYS) WORK IN PROGRESS
 
-This repository is tested on Linux (Debian + PopOS) and on Windows 11 (WSL2).
+This repository is tested on Linux (PopOS + Ubuntu) and on Windows 11 (WSL2).
 
 Heavily inspired from the Laracast series  [Neovim as a PHP and Javascript IDE](https://laracasts.com/series/neovim-as-a-php-ide) from Jess Archer, and from her dotfiles repository on [Github](https://github.com/jessarcher/dotfiles).
 
@@ -25,12 +25,13 @@ The following software needs to be installed:
 
 - Ghostty <https://ghostty.org/>
 - Neovim <https://neovim.io/>
+- Gum <https://github.com/charmbracelet/gum/>
+- JetBrainsMono font from Nerd Fonts <https://www.nerdfonts.com/>
 - OhMyZsh <https://ohmyz.sh/>
 - Starship <https://starship.rs/>
 - Tmux <https://github.com/tmux/tmux>
 - FZF <https://github.com/junegunn/fzf>
 - ripgrep (rg) <https://github.com/BurntSushi/ripgrep>
-- JetBrainsMono font from Nerd Fonts <https://www.nerdfonts.com/>
 
 All this can be installed by running `./install` after cloning repository.
 

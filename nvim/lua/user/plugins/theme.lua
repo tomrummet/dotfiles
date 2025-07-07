@@ -31,18 +31,6 @@ return {
                         bg = colors.surface1,
                         fg = colors.text
                     },
-                    -- Floaterm {
-                    --     bg = colors.pink
-                    -- },
-                    -- FloatermBorder {
-                    --     bg = prompt
-                    -- },
-                    NvimTree = {
-                        -- bg = colors.peach
-                    },
-                    NvimTreeNormal = {
-                        -- bg = colors.peach
-                    },
                     NvimTreeOpenedFile = {
                         bg = colors.pink,
                         bold = true

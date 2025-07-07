@@ -3,6 +3,14 @@
 # Setting env to skip redundant commands
 export RUNNING_DOTFILES=1
 
+# Install Charms Gum package
+KEYRINGS_DIR="/etc/apt/keyrings/";
+if [ ! -d "$KEYRINGS_DIR" ]; then
+    sudo mkdir -p $KEYRINGS_DIR
+    curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+    echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+fi
+
 # Install required software
 sudo apt update && sudo apt upgrade -y
 
@@ -20,7 +28,8 @@ sudo apt install -y \
     cmake \
     xclip \
     build-essential \
-    ufw
+    ufw \
+    gum
 
 # Install Ghostty
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"

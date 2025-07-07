@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+tmux new -A -s duo-panes -n duo-window -d
+
+tmux send-keys -t duo-panes "cd ~/code/metazo" Enter
+tmux send-keys -t duo-panes "clear" Enter
+tmux send-keys -t duo-panes "lt" Enter
+
+tmux split-window -v -t duo-panes
+tmux send-keys -t duo-panes "cd ~/code/metazo" Enter
+tmux send-keys -t duo-panes "clear" Enter
+tmux send-keys -t duo-panes "dcgo" Enter
+
+tmux switch-client -t duo-panes

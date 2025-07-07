@@ -31,6 +31,7 @@ else
     ln -sf $DOTFILES/zsh/env/work $HOME/.zshenv
 
     ln -sf $DOTFILES/tmux/2pan $HOME/.local/bin/2pan
+    ln -sf $DOTFILES/tmux/2vpan $HOME/.local/bin/2vpan
     ln -sf $DOTFILES/tmux/3pan $HOME/.local/bin/3pan
 fi
 

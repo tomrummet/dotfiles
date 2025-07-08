@@ -4,9 +4,9 @@
 export RUNNING_DOTFILES=1
 
 # Install dependencies
-sudo yay
+yay
 
-sudo yay -S --needed --noconfirm
+yay -S --needed --noconfirm \
     vim \
     neovim \
     tmux \

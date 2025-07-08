@@ -1,18 +1,20 @@
 #!/usr/bin/env sh
 
-echo ">>> Installing Docker"
+gum log --structured --time="DateTime" --level info "Installing Docker and Docker Composer"
 
 # Installs Docker and Docker Compose
 if [ ! "$RUNNING_DOTFILES" = 1 ]; then
     sudo apt update
 fi
 
+# Install dependencies
 sudo apt install -y \
     ca-certificates \
     curl
 
 IS_DEBIAN=$(uname -v | rg -c "Debian")
 
+# Set up repository
 if [ "$IS_DEBIAN" = "1" ]; then
     if [ ! -f "/etc/apt/keyrings/docker.asc" ]; then
         sudo install -m 0755 -d /etc/apt/keyrings

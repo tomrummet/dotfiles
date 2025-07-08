@@ -1,23 +1,45 @@
 #!/usr/bin/env bash
 
 DOTFILES=$(cd $(dirname "${BASH_SOURCE[0]}") && pwd)
-MACHINA="HELL"
 
-read -p "Run setup for work (yN)? " yn
-case $yn in
-    [Yy]* ) MACHINA="WORK";;
-    [Nn]* ) MACHINA="HELL";;
-    * ) echo "Running default setup for $MACHINA.";;
-esac
+gum confirm "Run setup for work?" && MACHINA="WORK" || MACHINA="HELL"
 
 # Scripts
 mkdir -p $HOME/.local/bin
 
+ln -sf $DOTFILES/utils/jump $HOME/.local/bin/jump # Shortcut for SSH to server and specific dir
+ln -sf $DOTFILES/utils/vsjump $HOME/.local/bin/vsjump # Shortcut for VS Code remote to server and specific dir
 ln -sf $DOTFILES/utils/t $HOME/.local/bin/t
 
-# Shortcuts for jumping to server SSH/VS Code
-ln -sf $DOTFILES/utils/jump $HOME/.local/bin/jump
-ln -sf $DOTFILES/utils/vsjump $HOME/.local/bin/vsjump
+# Ghostty
+mkdir -p $HOME/.config/ghostty
+ln -sf $DOTFILES/ghostty/config $HOME/.config/ghostty/config
+
+# Tmux
+ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
+
+# Neovim
+rm -rf $HOME/.config/nvim
+ln -sf $DOTFILES/nvim $HOME/.config/nvim
+
+# Git
+ln -sf $DOTFILES/git/gitignore $HOME/.gitignore
+ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
+
+# Zsh
+ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
+
+# Starship
+ln -sf $DOTFILES/starship/starship.toml $HOME/.config/starship.toml
+
+if [ ! -f "$HOME/.gitconfig.local" ]; then
+    gum style \
+        --foreground 212 --border-foreground 212 --border double \
+        --align center --width 50 --margin "1 2" --padding "2 4" \
+        'Remember to update .gitconfig.local'
+
+    cp $DOTFILES/git/gitconfig.local.example $HOME/.gitconfig.local
+fi
 
 if [ $MACHINA = "HELL" ]; then
     echo ">> Setting up symlinks for aliases and env for home"
@@ -31,33 +53,7 @@ else
     ln -sf $DOTFILES/zsh/env/work $HOME/.zshenv
 
     ln -sf $DOTFILES/tmux/2pan $HOME/.local/bin/2pan
-    ln -sf $DOTFILES/tmux/3pan $HOME/.local/bin/3pan
-fi
-
-# Zsh
-ln -sf $DOTFILES/zsh/zshrc $HOME/.zshrc
-
-# Starship
-ln -sf $DOTFILES/starship/starship.toml $HOME/.config/starship.toml
-
-# Alacritty (switch to .toml when updated to v0.13.X)
-mkdir -p $HOME/.config/alacritty
-ln -sf $DOTFILES/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
-
-# Tmux
-ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
-
-# Neovim
-rm -rf $HOME/.config/nvim
-ln -sf $DOTFILES/nvim $HOME/.config/nvim
-
-# Git
-ln -sf $DOTFILES/git/gitignore $HOME/.gitignore
-ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
-
-if [ ! -f "$HOME/.gitconfig.local" ]; then
-    echo "Remember to update .gitconfig.local"
-    cp $DOTFILES/git/gitconfig.local.example $HOME/.gitconfig.local
+    ln -sf $DOTFILES/tmux/2vpan $HOME/.local/bin/2vpan
 fi
 
 # NVM (Node Version Manager)

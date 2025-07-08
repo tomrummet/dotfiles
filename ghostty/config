@@ -18,4 +18,6 @@ font-size = 10.0
 theme = "catppuccin-mocha"
 background-opacity = 0.9
 background-blur = true
+maximize = true
 window-decoration = none
+confirm-close-surface = false

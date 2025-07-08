@@ -113,7 +113,7 @@ if [ ! -f "$HOME/.fonts/JetBrainsMonoNLNerdFont-Thin.ttf" ]; then
     echo ">> Downloading JetBrainsMono font from nerdfonts.com..."
 
     cd ~/.fonts/
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
     unzip JetBrainsMono.zip
     rm \
         JetBrainsMono.zip \

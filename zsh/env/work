@@ -1,3 +1,2 @@
 # ENV intended for home use
 
-. "$HOME/.cargo/env"

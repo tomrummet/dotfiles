@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Setting env to skip redundant commands
 export RUNNING_DOTFILES=1
@@ -11,11 +11,12 @@ if [ ! -d "$KEYRINGS_DIR" ]; then
     echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
 fi
 
-# Install required software
+INSTALLABLE=$(gum choose --no-limit --header "What do you wish to install?" "PHP" "Docker" "Composer")
+
+# Install dependencies
 sudo apt update && sudo apt upgrade -y
 
 sudo apt install -y \
-    zsh \
     vim \
     tmux \
     fzf \
@@ -23,52 +24,47 @@ sudo apt install -y \
     curl \
     wget \
     unzip \
-    ninja-build \
-    gettext \
-    cmake \
     xclip \
     build-essential \
     ufw \
-    gum
+    zsh \
+    gum \
+    ninja-build \
+    gettext \
+    cmake
 
-# Install Ghostty
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
+if [ ! -f "/usr/bin/ghostty" ]; then
+    # Install Ghostty
+    gum log --structured --time="DateTime" --level info "Installing Ghostty terminal"
+
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
+fi
+
+INSTALL=($(echo "$INSTALLABLE" | tr ',' '\n'))
+
+for value in "${INSTALL[@]}"
+do
+  ./scripts/install-${value,,}.sh
+done
 
 # Install PHP and common extensions
-read -p "Install PHP (Yn)? " yn
-case $yn in
-    [Nn]* ) ;;
-    * )
-        ./scripts/install-php.sh
-        ;;
-esac
+# gum confirm "Install PHP?" && ./scripts/install-php.sh
 
-# Install Composer if not installed
-read -p "Install Composer (Yn)? " yn
-case $yn in
-    [Nn]* ) ;;
-    * )
-        ./scripts/install-composer.sh
-        ;;
-esac
+# Install Composer globally
+# gum confirm "Install Composer globally?" && ./scripts/install-composer.sh
 
 # Install Docker and Docker Compose
-read -p "Install Docker (Yn)? " yn
-case $yn in
-    [Nn]* ) ;;
-    * )
-        ./scripts/install-docker.sh
-        ;;
-esac
-
+# gum confirm "Install Docker and Docker Compose?" && ./scripts/install-docker.sh
+exit
 if [ ! -d "$HOME/code/setup-tmp" ]; then
-    echo ">> Creating setup-tmp folder..."
+    gum log --structured --time="DateTime" --level info "Creating setup-tmp folder"
+
     mkdir -p ~/code/setup-tmp
 fi
 
-# Install Oh-My-Zsh if not installed
+# Install Oh-My-Zsh and Starship if not installed
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    echo ">> Setting up zsh and OhMyZsh..."
+    gum log --structured --time="DateTime" --level info "Setting up zsh and OhMyZsh"
 
     # Switch from bash to zsh
     chsh -s $(which zsh)
@@ -77,17 +73,20 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
 
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-fi
 
-if [ ! -f "$HOME/.config/starship.toml" ]; then
     # Install Starship
-    cd $HOME/code/setup-tmp/
-    curl -sS https://starship.rs/install.sh | sh
+    if [ ! -f "$HOME/.config/starship.toml" ]; then
+        gum log --structured --time="DateTime" --level info "Installing Starship"
+
+        cd $HOME/code/setup-tmp/
+        curl -sS https://starship.rs/install.sh | sh
+    fi
 fi
 
 # Install PHPActor (used in Neovim)
+# gum confirm "Install/update PHPActor?"
 if [ ! -f "$HOME/.local/bin/phpactor" ]; then
-    echo "Installing PHPActor"
+    gum log --structured --time="DateTime" --level info "Installing/updating PHPActor"
 
     curl -Lo phpactor.phar https://github.com/phpactor/phpactor/releases/latest/download/phpactor.phar
     chmod a+x phpactor.phar

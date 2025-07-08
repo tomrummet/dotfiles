@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo ">>> Installing Composer"
+gum log --structured --time="DateTime" --level info "Installing Composer globally"
 
 if [ ! -f "/usr/local/bin/composer" ]; then
     EXPECTED_CHECKSUM="$(php -r 'copy("https://composer.github.io/installer.sig", "php://stdout");')"

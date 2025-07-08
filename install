@@ -3,21 +3,12 @@
 # Setting env to skip redundant commands
 export RUNNING_DOTFILES=1
 
-# Install Charms Gum package
-KEYRINGS_DIR="/etc/apt/keyrings/";
-if [ ! -d "$KEYRINGS_DIR" ]; then
-    sudo mkdir -p $KEYRINGS_DIR
-    curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-    echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-fi
-
-INSTALLABLE=$(gum choose --no-limit --header "What do you wish to install?" "PHP" "Docker" "Composer")
-
 # Install dependencies
-sudo apt update && sudo apt upgrade -y
+sudo yay
 
-sudo apt install -y \
+sudo yay -S --needed --noconfirm
     vim \
+    neovim \
     tmux \
     fzf \
     ripgrep \
@@ -25,20 +16,12 @@ sudo apt install -y \
     wget \
     unzip \
     xclip \
-    build-essential \
-    ufw \
     zsh \
-    gum \
-    ninja-build \
     gettext \
-    cmake
+    gum \
+    ghostty
 
-if [ ! -f "/usr/bin/ghostty" ]; then
-    # Install Ghostty
-    gum log --structured --time="DateTime" --level info "Installing Ghostty terminal"
-
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
-fi
+INSTALLABLE=$(gum choose --no-limit --header "What do you wish to install?" "PHP" "Docker" "Composer")
 
 INSTALL=($(echo "$INSTALLABLE" | tr ',' '\n'))
 
@@ -47,15 +30,6 @@ do
   ./scripts/install-${value,,}.sh
 done
 
-# Install PHP and common extensions
-# gum confirm "Install PHP?" && ./scripts/install-php.sh
-
-# Install Composer globally
-# gum confirm "Install Composer globally?" && ./scripts/install-composer.sh
-
-# Install Docker and Docker Compose
-# gum confirm "Install Docker and Docker Compose?" && ./scripts/install-docker.sh
-exit
 if [ ! -d "$HOME/code/setup-tmp" ]; then
     gum log --structured --time="DateTime" --level info "Creating setup-tmp folder"
 
@@ -84,23 +58,12 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 # Install PHPActor (used in Neovim)
-# gum confirm "Install/update PHPActor?"
 if [ ! -f "$HOME/.local/bin/phpactor" ]; then
     gum log --structured --time="DateTime" --level info "Installing/updating PHPActor"
 
     curl -Lo phpactor.phar https://github.com/phpactor/phpactor/releases/latest/download/phpactor.phar
     chmod a+x phpactor.phar
     mv phpactor.phar ~/.local/bin/phpactor
-fi
-
-# Install Neovim
-if [ $(dpkg-query -W -f='${Status}' neovim 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
-    echo ">> Installing Neovim..."
-    cd ~/code/setup-tmp/
-
-    git clone https://github.com/neovim/neovim
-    cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo
-    cd build && sudo cpack -G DEB && sudo dpkg -i nvim-linux-x86_64.deb
 fi
 
 if [ ! -d "$HOME/.fonts" ]; then

@@ -48,5 +48,5 @@ alias ff="clear && fastfetch"
 alias dcup="docker compose up -d"
 alias dcdown="docker compose down"
 
-source $HOME/.aliases
+ source $HOME/.aliases
 

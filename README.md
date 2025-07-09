@@ -2,7 +2,7 @@
 
 > (ALWAYS) WORK IN PROGRESS
 
-This repository is tested on Linux (PopOS + Ubuntu) and on Windows 11 (WSL2).
+This repository is tested on EndevourOS (Arch). 
 
 Heavily inspired from the Laracast series  [Neovim as a PHP and Javascript IDE](https://laracasts.com/series/neovim-as-a-php-ide) from Jess Archer, and from her dotfiles repository on [Github](https://github.com/jessarcher/dotfiles).
 
@@ -37,17 +37,9 @@ All this can be installed by running `./install` after cloning repository.
 
 ## Setup
 
-### Linux (+ WSL2)
-
 Run `./setup` after cloning the project, this will take care of symlinking config files and setting up executables.
 
 The setup script will tell you this, but just to make sure, remember to update `~/.gitconfig.local` to make sure you commit with the right name and email.
-
-### Windows
-
-Usage of this dotfiles repository expects WSL2.
-
-From WSL2 just follow the instructions above.
 
 ## Honourable mentions
 

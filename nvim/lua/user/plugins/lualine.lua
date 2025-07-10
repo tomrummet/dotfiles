@@ -32,10 +32,6 @@ return {
         { 'diagnostics', sources = { 'nvim_diagnostic' } },
       },
       lualine_c = {
-        {
-            'filename',
-            path = 1
-        }
       },
       lualine_x = {
         {

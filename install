@@ -11,11 +11,8 @@ if [ ! -d "$KEYRINGS_DIR" ]; then
     echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
 fi
 
-INSTALLABLE=$(gum choose --no-limit --header "What do you wish to install?" "PHP" "Docker" "Composer")
-
 # Install dependencies
 sudo apt update && sudo apt upgrade -y
-
 sudo apt install -y \
     vim \
     tmux \
@@ -33,6 +30,7 @@ sudo apt install -y \
     gettext \
     cmake
 
+INSTALLABLE=$(gum choose --no-limit --header "What do you wish to install?" "PHP" "Docker" "Composer")
 if [ ! -f "/usr/bin/ghostty" ]; then
     # Install Ghostty
     gum log --structured --time="DateTime" --level info "Installing Ghostty terminal"
@@ -41,26 +39,10 @@ if [ ! -f "/usr/bin/ghostty" ]; then
 fi
 
 INSTALL=($(echo "$INSTALLABLE" | tr ',' '\n'))
-
 for value in "${INSTALL[@]}"
 do
   ./scripts/install-${value,,}.sh
 done
-
-# Install PHP and common extensions
-# gum confirm "Install PHP?" && ./scripts/install-php.sh
-
-# Install Composer globally
-# gum confirm "Install Composer globally?" && ./scripts/install-composer.sh
-
-# Install Docker and Docker Compose
-# gum confirm "Install Docker and Docker Compose?" && ./scripts/install-docker.sh
-exit
-if [ ! -d "$HOME/code/setup-tmp" ]; then
-    gum log --structured --time="DateTime" --level info "Creating setup-tmp folder"
-
-    mkdir -p ~/code/setup-tmp
-fi
 
 # Install Oh-My-Zsh and Starship if not installed
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -113,7 +95,7 @@ if [ ! -f "$HOME/.fonts/JetBrainsMonoNLNerdFont-Thin.ttf" ]; then
     echo ">> Downloading JetBrainsMono font from nerdfonts.com..."
 
     cd ~/.fonts/
-    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/JetBrainsMono.zip
+    wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/JetBrainsMono.zip
     unzip JetBrainsMono.zip
     rm \
         JetBrainsMono.zip \

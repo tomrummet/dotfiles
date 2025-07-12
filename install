@@ -43,6 +43,8 @@ if [ ! -f "$HOME/.config/starship.toml" ]; then
     # Switch from bash to zsh
     chsh -s $(which zsh)
 
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
     # Install Starship
         gum log --structured --time="DateTime" --level info "Installing Starship"
 

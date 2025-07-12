@@ -4,6 +4,8 @@ if [ "$TMUX" = "" ]; then
     tmux new-session -A -s "go!" -c $HOME/code/;
 fi
 
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 plugins=(
     git
     zsh-autosuggestions
@@ -16,6 +18,7 @@ path=(
     $path
 )
 
+eval `ssh-agent -t 60m` >/dev/null
 eval "$(starship init zsh)"
 
 export EDITOR=nvim

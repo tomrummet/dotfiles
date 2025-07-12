@@ -37,24 +37,17 @@ if [ ! -d "$HOME/code/setup-tmp" ]; then
 fi
 
 # Install Oh-My-Zsh and Starship if not installed
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    gum log --structured --time="DateTime" --level info "Setting up zsh and OhMyZsh"
+if [ ! -f "$HOME/.config/starship.toml" ]; then
+    gum log --structured --time="DateTime" --level info "Setting up zsh and Starship"
 
     # Switch from bash to zsh
     chsh -s $(which zsh)
 
-    # Install and setup OhMyZsh
-    curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
-
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
     # Install Starship
-    if [ ! -f "$HOME/.config/starship.toml" ]; then
         gum log --structured --time="DateTime" --level info "Installing Starship"
 
         cd $HOME/code/setup-tmp/
-        curl -sS https://starship.rs/install.sh | sh
-    fi
+	curl -sS https://starship.rs/install.sh | sh
 fi
 
 # Install PHPActor (used in Neovim)
@@ -84,8 +77,8 @@ if [ ! -f "$HOME/.fonts/JetBrainsMonoNLNerdFont-Thin.ttf" ]; then
         README.md
 fi
 
-# Node
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh
+# Node Version Manager
+yay -S nvm --noconfirm
 
 if [ -d "$HOME/code/setup-tmp" ]; then
     echo ">> Removing setup-tmp folder..."

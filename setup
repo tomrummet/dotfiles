@@ -7,6 +7,9 @@ gum confirm "Run setup for work?" && MACHINA="WORK" || MACHINA="HELL"
 # Hyprland
 ln -sf $DOTFILES/hyprland/hyprland.conf $HOME/.config/hyprland/hyprland.conf
 ln -sf $DOTFILES/hyprland/hyprlock.conf $HOME/.config/hyprland/hyprlock.conf
+ln -sf $DOTFILES/hyprland/waybar/config.jsonc $HOME/.config/waybar/config.jsonc
+ln -sf $DOTFILES/hyprland/waybar/mocha.css $HOME/.config/waybar/mocha.css
+ln -sf $DOTFILES/hyprland/waybar/style.css $HOME/.config/waybar/style.css
 
 # Scripts
 mkdir -p $HOME/.local/bin

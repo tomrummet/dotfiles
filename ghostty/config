@@ -21,3 +21,4 @@ background-blur = true
 maximize = true
 window-decoration = none
 confirm-close-surface = false
+working-directory = /home/ash/code/

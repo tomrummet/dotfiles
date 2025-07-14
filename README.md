@@ -2,7 +2,7 @@
 
 > (ALWAYS) WORK IN PROGRESS
 
-This repository is tested on EndeavourOS (Arch). 
+This repository is tested on EndeavourOS (Arch Linux).
 
 Heavily inspired from the Laracast series  [Neovim as a PHP and Javascript IDE](https://laracasts.com/series/neovim-as-a-php-ide) from Jess Archer, and from her dotfiles repository on [Github](https://github.com/jessarcher/dotfiles).
 
@@ -21,7 +21,7 @@ cd dotfiles/
 
 ### Dependencies
 
-The following software needs to be installed:
+The following packages needs to be installed:
 
 - Ghostty <https://ghostty.org/>
 - Neovim <https://neovim.io/>
@@ -33,7 +33,7 @@ The following software needs to be installed:
 - FZF <https://github.com/junegunn/fzf>
 - ripgrep (rg) <https://github.com/BurntSushi/ripgrep>
 
-All this can be installed by running `./install` after cloning repository.
+All this can be installed by cloning and running `./install` from my installer repository <https://github.com/tomrummet/installer>.
 
 ## Setup
 

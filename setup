@@ -19,6 +19,7 @@ ln -sf $DOTFILES/hyprland/hyprland.conf $HOME/.config/hypr/hyprland.conf
 ln -sf $DOTFILES/hyprland/hyprlock.conf $HOME/.config/hypr/hyprlock.conf
 
 ln -sf $DOTFILES/hyprland/waybar/config.jsonc $HOME/.config/waybar/config.jsonc
+ln -sf $DOTFILES/hyprland/waybar/modules.json $HOME/.config/waybar/modules.json
 ln -sf $DOTFILES/hyprland/waybar/mocha.css $HOME/.config/waybar/mocha.css
 ln -sf $DOTFILES/hyprland/waybar/style.css $HOME/.config/waybar/style.css
 

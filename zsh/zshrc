@@ -36,7 +36,7 @@ alias pkey="xclip -selection clipboard ~/.ssh/id_rsa.pub"
 alias privkey="xclip -selection clipboard ~/.ssh/id_rsa"
 alias myip="curl -s https://myip.dk | xclip -selection clipboard"
 alias ff="clear && fastfetch"
-alias ll="ls -la"
+alias ll="ls -lah"
 
 # Docker
 alias dcup="docker compose up -d"

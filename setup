@@ -11,20 +11,20 @@ ln -sf $DOTFILES/utils/jump $HOME/.local/bin/jump # Shortcut for SSH to server a
 ln -sf $DOTFILES/utils/vsjump $HOME/.local/bin/vsjump # Shortcut for VS Code remote to server and specific dir
 ln -sf $DOTFILES/utils/t $HOME/.local/bin/t
 
-# Hyprland
-mkdir -p $HOME/.config/waybar
-mkdir -p $HOME/.config/rofi
+# # Hyprland
+# mkdir -p $HOME/.config/waybar
+# mkdir -p $HOME/.config/rofi
 
-ln -sf $DOTFILES/hyprland/hyprland.conf $HOME/.config/hypr/hyprland.conf
-ln -sf $DOTFILES/hyprland/hyprlock.conf $HOME/.config/hypr/hyprlock.conf
+# ln -sf $DOTFILES/hyprland/hyprland.conf $HOME/.config/hypr/hyprland.conf
+# ln -sf $DOTFILES/hyprland/hyprlock.conf $HOME/.config/hypr/hyprlock.conf
 
-ln -sf $DOTFILES/hyprland/waybar/config.jsonc $HOME/.config/waybar/config.jsonc
-ln -sf $DOTFILES/hyprland/waybar/modules.json $HOME/.config/waybar/modules.json
-ln -sf $DOTFILES/hyprland/waybar/mocha.css $HOME/.config/waybar/mocha.css
-ln -sf $DOTFILES/hyprland/waybar/style.css $HOME/.config/waybar/style.css
+# ln -sf $DOTFILES/hyprland/waybar/config.jsonc $HOME/.config/waybar/config.jsonc
+# ln -sf $DOTFILES/hyprland/waybar/modules.json $HOME/.config/waybar/modules.json
+# ln -sf $DOTFILES/hyprland/waybar/mocha.css $HOME/.config/waybar/mocha.css
+# ln -sf $DOTFILES/hyprland/waybar/style.css $HOME/.config/waybar/style.css
 
-ln -sf $DOTFILES/hyprland/rofi/config.rasi $HOME/.config/rofi/config.rasi
-ln -sf $DOTFILES/hyprland/rofi/catppuccin-mocha.rasi $HOME/.config/rofi/catppuccin-mocha.rafi
+# ln -sf $DOTFILES/hyprland/rofi/config.rasi $HOME/.config/rofi/config.rasi
+# ln -sf $DOTFILES/hyprland/rofi/catppuccin-mocha.rasi $HOME/.config/rofi/catppuccin-mocha.rafi
 
 # Ghostty
 mkdir -p $HOME/.config/ghostty

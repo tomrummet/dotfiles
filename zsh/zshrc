@@ -1,9 +1,8 @@
 # Personal zsh config of Ash (ash@helash.dev)
 
-# Temporary disabled
-# if [ "$TMUX" = "" ]; then
-#     tmux new-session -A -s "go!" -c $HOME/code/;
-# fi
+if [ "$TMUX" = "" ]; then
+    tmux new-session -A -s "go!" -c $HOME/code/;
+fi
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 

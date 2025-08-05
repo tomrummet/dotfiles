@@ -10,6 +10,7 @@ mkdir -p $HOME/.local/bin
 ln -sf $DOTFILES/utils/jump $HOME/.local/bin/jump # Shortcut for SSH to server and specific dir
 ln -sf $DOTFILES/utils/vsjump $HOME/.local/bin/vsjump # Shortcut for VS Code remote to server and specific dir
 ln -sf $DOTFILES/utils/t $HOME/.local/bin/t
+ln -sf $DOTFILES/utils/toggle-purpose $HOME/.local/bin/toggle-purpose
 
 # # Hyprland
 # mkdir -p $HOME/.config/waybar

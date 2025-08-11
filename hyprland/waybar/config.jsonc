@@ -1,0 +1,25 @@
+{
+    "position": "top",
+    "height": 25,
+    "margin-top": 5,
+    "margin-bottom": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "spacing": 5,
+
+
+    "include": [
+        "~/.config/waybar/modules.json"
+    ],
+
+    "modules-left": ["hyprland/window"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [
+        "group/hardware",
+        "bluetooth",
+        "pulseaudio",
+        "network",
+        "clock",
+        "battery",
+    ],
+}

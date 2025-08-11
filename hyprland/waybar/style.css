@@ -1,0 +1,118 @@
+@import "mocha.css";
+
+* {
+    /* font-family: "MesloLGS Nerd Font Mono Bold"; */
+    font-size: 14px;
+    min-height: 0;
+    font-weight: bold;
+    border: none;
+    border-radius: 0px;
+}
+
+window#waybar {
+    background: transparent;
+    padding: 5px;
+    color: @overlay0;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+}
+
+.modules-right {
+    padding-right: 5px;
+}
+
+#window {
+    background-color: @mauve;
+    color: @base;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+#workspaces {
+    padding: 0px 2px;
+    opacity: 1.0;
+}
+
+#workspaces button {
+    padding: 0;
+    margin: 3px 2px;
+    border-radius: 20px;
+    background-color: @blue;
+    transition: all 0.1s linear;
+    opacity: 0.4;
+}
+
+#workspaces button.active {
+    min-width: 42px;
+    transition: all 0.1s linear;
+    opacity:1.0;
+}
+
+#workspaces button:hover {
+    opacity:0.7;
+}
+
+#pulseaudio,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#tray,
+#network,
+#bluetooth,
+#mode,
+#scratchpad {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#clock {
+    color: @maroon;
+    border-bottom: 2px solid @maroon;
+}
+
+#clock.date {
+    color: @mauve;
+    border-bottom: 2px solid @mauve;
+}
+
+#pulseaudio {
+    color: @blue;
+    border-bottom: 2px solid @blue;
+}
+
+#network {
+    color: @yellow;
+    border-bottom: 2px solid @yellow;
+}
+
+#bluetooth {
+    color: @sky;
+    border-bottom: 2px solid @sky;
+}
+
+#idle_inhibitor {
+    margin-right: 12px;
+    color: #7cb342;
+}
+
+#idle_inhibitor.activated {
+    color: @red;
+}
+
+#battery {
+    color: @green;
+    border-bottom: 2px solid @green;
+}

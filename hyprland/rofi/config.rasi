@@ -1,0 +1,22 @@
+@import "catppuccin-mocha"
+
+configuration {
+    display-ssh:    "󰣀 SSH";
+    display-run:    "󱓞 Run";
+    display-drun:   "󰣖 Launch";
+    display-window: "󱂬 Windows";
+    display-combi:  "󰕘 Combi";
+    display-filebrowser: "󰉋 Files";
+
+    modi: "drun,window,ssh,filebrowser,run";
+    terminal: "ghostty";
+    show-icons: false;
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: true;
+    hide-scrollbar: true;
+    sidebar-mode: true;
+}
+
+@theme "catppuccin-mocha"
+

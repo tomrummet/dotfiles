@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+gum confirm "Working?" && PURPOSE="Work" || PURPOSE="Free"
+
+rm ~/.wallpapers/*
+cp -a $HOME/Pictures/Wallpaper/$PURPOSE/. $HOME/.wallpapers/
+
+sh $HOME/code/tools/dotfiles/utils/wallpaper
+

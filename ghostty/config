@@ -19,3 +19,5 @@ theme = "catppuccin-mocha"
 background-opacity = 0.9
 background-blur = true
 window-decoration = none
+confirm-close-surface = false
+working-directory = /home/ash/code/

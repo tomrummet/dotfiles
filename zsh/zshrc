@@ -18,7 +18,7 @@ path=(
     $path
 )
 
-eval `ssh-agent -t 60m` >/dev/null
+eval `keychain --eval --quiet ~/.ssh/id_rsa`
 eval "$(starship init zsh)"
 
 export EDITOR=nvim

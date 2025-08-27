@@ -9,5 +9,5 @@ alias lta='tail -f {metazo/sites/*,var/log/php}.log'
 alias ltr='truncate -s 0 var/log/php.log && truncate -s 0 metazo/sites/*.log'
 alias lt='ltr && lta'
 
-alias runtest='metazo bin/phpunit.phar -c phpunit.xml --testsuite=All --debug --colors=always'
+alias runtest='metazo bin/phpunit.phar -c phpunit.xml --colors=always'
 

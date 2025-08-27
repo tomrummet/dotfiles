@@ -14,8 +14,8 @@ return {
       },
     })
 
-    require('mason-lspconfig').setup({ automatic_installation = true })
-
+    local mason_lspconfig = require('mason-lspconfig')
+    mason_lspconfig.setup({ automatic_installation = true })
     local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
     -- PHP
@@ -73,10 +73,6 @@ return {
       on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
-        -- if client.server_capabilities.inlayHintProvider then
-
-        --   vim.lsp.buf.inlay_hint(bufnr, true)
-        -- end
       end,
       capabilities = capabilities,
       -- Enable "Take Over Mode" where volar will provide all JS/TS LSP services
@@ -93,6 +89,14 @@ return {
           schemas = require('schemastore').json.schemas(),
         },
       },
+    })
+
+    -- Python
+    mason_lspconfig.setup {
+       ensure_installed = { 'pyright' }
+    }
+    require('lspconfig').pyright.setup({
+        capabilities = capabilities,
     })
 
     -- Keymaps

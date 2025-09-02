@@ -27,7 +27,6 @@ The following packages needs to be installed:
 - Neovim <https://neovim.io/>
 - Gum <https://github.com/charmbracelet/gum/>
 - JetBrainsMono font from Nerd Fonts <https://www.nerdfonts.com/>
-- OhMyZsh <https://ohmyz.sh/>
 - Starship <https://starship.rs/>
 - Tmux <https://github.com/tmux/tmux>
 - FZF <https://github.com/junegunn/fzf>

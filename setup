@@ -27,9 +27,14 @@ ln -sf $DOTFILES/utils/toggle-purpose $HOME/.local/bin/toggle-purpose
 # ln -sf $DOTFILES/hyprland/rofi/config.rasi $HOME/.config/rofi/config.rasi
 # ln -sf $DOTFILES/hyprland/rofi/catppuccin-mocha.rasi $HOME/.config/rofi/catppuccin-mocha.rafi
 
+# Alacritty
+mkdir -p $HOME/.config/alacritty
+ln -sf $DOTFILES/config/alacritty/alacritty.toml $HOME/.config/alacritty/alacritty.toml
+
 # Ghostty
-mkdir -p $HOME/.config/ghostty
-ln -sf $DOTFILES/ghostty/config $HOME/.config/ghostty/config
+mkdir -p $HOME/.config/ghostty/themes
+ln -sf $DOTFILES/config/ghostty/config $HOME/.config/ghostty/config
+ln -sf $DOTFILES/config/ghostty/themes/catppuccin-mocha.conf $HOME/.config/ghostty/themes/catppuccin-mocha.conf
 
 # Tmux
 ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf

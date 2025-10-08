@@ -1,0 +1,21 @@
+[window]
+decorations = "None"
+opacity = 0.9
+blur = true
+# startup_mode = "Maximized"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+size = 10
+
+[colors.primary]
+background = "#151515"
+
+# [general]
+# import = [
+    # uncomment the flavour you want below:
+    # "~/.config/alacritty/catppuccin-latte.toml"
+    # "~/.config/alacritty/catppuccin-frappe.toml"
+    # "~/.config/alacritty/catppuccin-macchiato.toml"
+    # "~/.config/alacritty/catppuccin-mocha.toml"
+# ]

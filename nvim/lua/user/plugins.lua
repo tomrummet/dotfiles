@@ -16,7 +16,8 @@ require("lazy").setup({
     -- Theme config
     { import = 'user.plugins.theme' },
 
-    "tpope/vim-commentary", -- Commenting support -- Commenting support
+    -- Commenting support -- Commenting support
+    "tpope/vim-commentary",
 
     -- Autopairing quotes, brackets...
     { import = 'user.plugins.autopairs' },
@@ -36,7 +37,6 @@ require("lazy").setup({
     -- Display buffer as tabs
     { import = 'user.plugins.bufferline' },
 
-    --
     { import = 'user.plugins.indent-blankline' },
 
     -- Git integration
@@ -49,8 +49,6 @@ require("lazy").setup({
     -- Treesitter
     { import = 'user.plugins.treesitter' },
 
-    -- "folke/neoconf.nvim",
-
     -- Language Server Protocol.
     { import = 'user.plugins.lspconfig' },
 
@@ -61,7 +59,7 @@ require("lazy").setup({
     { import = 'user.plugins.phpactor' },
 
     -- Github Copilot
-    { import = 'user.plugins.copilot' },
+    -- { import = 'user.plugins.copilot' },
 
     -- Debug Apapter Protocol
     { import = 'user.plugins.dap' },

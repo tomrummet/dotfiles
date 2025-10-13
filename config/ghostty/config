@@ -1,9 +1,5 @@
 # This is the configuration file for Ghostty.
 #
-# The template does not set any default options, since Ghostty ships
-# with sensible defaults for all options. Users should only need to set
-# options that they want to change from the default.
-#
 # Run `ghostty +show-config --default --docs` to view a list of
 # all available config options and their default values.
 #
@@ -15,9 +11,10 @@
 
 font-family = "JetBrainsMono Nerd Font"
 font-size = 10.0
-theme = "catppuccin-mocha"
+theme = catppuccin-mocha.conf
 background-opacity = 0.9
 background-blur = true
 window-decoration = none
+# maximize = true
 confirm-close-surface = false
 working-directory = /home/ash/code/

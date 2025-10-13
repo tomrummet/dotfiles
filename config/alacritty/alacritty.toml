@@ -2,7 +2,7 @@
 decorations = "None"
 opacity = 0.9
 blur = true
-# startup_mode = "Maximized"
+startup_mode = "Maximized"
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }

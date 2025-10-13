@@ -12,7 +12,7 @@
 font-family = "JetBrainsMono Nerd Font"
 font-size = 10.0
 theme = catppuccin-mocha.conf
-background-opacity = 0.9
+background-opacity = 0.8
 background-blur = true
 window-decoration = none
 maximize = true

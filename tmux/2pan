@@ -2,13 +2,13 @@
 
 tmux new -A -s duo-panes -n duo-window -d
 
-tmux send-keys -t duo-panes "cd ~/code/metazo" Enter
 tmux send-keys -t duo-panes "clear" Enter
 tmux send-keys -t duo-panes "copilot --banner" Enter
 
 tmux split-window -h -t duo-panes
-tmux send-keys -t duo-panes "cd ~/code/metazo" Enter
 tmux send-keys -t duo-panes "clear" Enter
-tmux send-keys -t duo-panes "lt" Enter
+tmux send-keys -t duo-panes 'find . -type f \( -name "*.log" \) -exec truncate -s 0 "$file" {} +' Enter
+tmux send-keys -t duo-panes "clear" Enter
+tmux send-keys -t duo-panes 'find . -type f \( -name "*.log" \) -exec tail -f "$file" {} +' Enter
 
 tmux switch-client -t duo-panes

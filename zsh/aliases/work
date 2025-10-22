@@ -5,8 +5,8 @@ alias dcgo="dcup && dcbash"
 alias dcr='docker compose restart'
 alias dcbash='docker compose exec -u www-data php bash'
 
-alias lta='tail -f {metazo/sites/*,var/log/php}.log'
-alias ltr='truncate -s 0 var/log/php.log && truncate -s 0 metazo/sites/*.log'
+alias ltr='find . -type f -name "*.log" ! -path "./var/cache/*" -exec truncate -s 0 "$file" {} +'
+alias lta='find . -type f -name "*.log" ! -path "./var/cache/*" -exec tail -f "$file" {} +'
 alias lt='ltr && lta'
 
 alias runtest='metazo bin/phpunit.phar -c phpunit.xml --colors=always'

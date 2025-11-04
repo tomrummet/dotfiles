@@ -3,7 +3,7 @@
 tmux new -A -s duo-panes -n duo-window -d
 
 tmux send-keys -t duo-panes "clear" Enter
-tmux send-keys -t duo-panes "copilot --banner" Enter
+# tmux send-keys -t duo-panes "copilot --banner" Enter
 
 tmux split-window -h -t duo-panes
 tmux send-keys -t duo-panes "clear" Enter
